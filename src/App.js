@@ -11,7 +11,7 @@ function App() {
         </header>
         <main className='main'>
             <div className='container'>
-              <video src={VideoBackground} loop autoPlay></video>
+              <video src={VideoBackground} autoPlay loop muted ></video>
             </div>
         </main>
     </div>
