@@ -30,7 +30,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
-  background-color: #070707fd;
+  background-color: #000000;
 }
 
 ::-webkit-scrollbar {
@@ -304,5 +304,4 @@ main {
   width: 100vw;
   height: 100vh;
   position: relative;
-  
 }
