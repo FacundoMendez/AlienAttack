@@ -1,9 +1,21 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import imgCoin from "../../img/coin.png"
+import navFuncional from './navFuncional';
+import navScroll from './scrollNav';
+
+
+
+
 
 function Nav() {
+
+    useEffect(() => {
+        navScroll();
+
+    },[])
+
     return (
         <header className="header">
             <div className='logoOculto'>
@@ -11,12 +23,12 @@ function Nav() {
             </div>
             <nav className="nav">
                 <div className="nav__img">
-                    <button className="nav-toggle" aria-label="Abrir menú">
+                    <button className="nav-toggle" aria-label="Abrir menú" onClick={navFuncional}>
                         <FontAwesomeIcon icon={faBars} />
                     </button>
                     <ul className="navVisible nav-menu">
                         <li className="nav-menu-item">
-                            <a href="#" className="nav-menu-link nav-link">
+                            <a href="../../public/index.html" className="nav-menu-link nav-link">
                                 Home
                             </a>
                         </li>
@@ -30,7 +42,7 @@ function Nav() {
                                 User
                             </a>
                         </li>
-                       {/*  <li className="nav-menu-item nav2" >
+                        {/*  <li className="nav-menu-item nav2" >
                             <div className='coin'>
                                 <img src={imgCoin} alt="coin" />
                             </div>
@@ -46,4 +58,6 @@ function Nav() {
     );
 }
 
+
 export default Nav;
+

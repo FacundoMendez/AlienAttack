@@ -64,22 +64,23 @@ html {
   width: 100%;
   height: 7.2rem;
   top: 1%;
-  filter: drop-shadow(0 0 40px rgba(2, 2, 172, 0.692));
+  filter: drop-shadow(0 0 40px rgba(112, 255, 107, 0.692));
 }
 
 .logoOculto {
   position: fixed;
   text-align: center;
-  left: 50%;
+  left: 85%;
   transform: translate(-50%);
   top: 2rem;
-  color: white;
+  color: rgb(150, 250, 146);
   font-size: 3rem;
   z-index: 10001;
-  font-family: "sbc";
   display: none;
   transition: all 1s ease-in-out;
-  filter: drop-shadow(0 0 2px rgb(2, 2, 172));
+  text-shadow: 0 0 3rem rgb(119, 248, 114);
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .nav-link {
@@ -88,17 +89,21 @@ html {
   font-weight:bold;
   letter-spacing: 0px;
   color: rgb(240, 240, 240);
+
 }
 
 .nav-menu {
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  left: 6%;
   list-style: none;
   position: absolute;
   width: 100%;
   top: 1.2rem;
+}
+
+.navVisible{
+  padding-left: 6%;
 }
 
 .nav-menu-link {
@@ -115,7 +120,7 @@ html {
 .nav-toggle {
   position: absolute;
   top: 0rem;
-  right: 12%;
+  left: 5%;
   color: white;
   background: none;
   border: none;
@@ -128,19 +133,33 @@ html {
 }
 
 .nav-menu-item {
-  margin: 1rem 10px;
+  margin: 0rem 10px;
   text-transform: uppercase;
   width: max-content;
+}
+
+  
+.nav-menu_visible {
+  right: 0%;
+  padding-top: 20rem;
 }
 
 .nav-menu-link_active:hover {
   transition: all 0.2s ease-in-out;
 }
 
-.nav li a:hover {
-  filter: drop-shadow(0 0 10px rgba(179, 255, 179, 0.486));
-    text-shadow: 0 0 1rem rgb(5, 5, 5);
+.nav li a{
+  transition: all .5s ease-in-out;
 }
+
+.nav li a:hover {
+  color: #7dd18b;
+  background-color: #0000003d;
+  box-shadow: 0 0 .5rem rgba(179, 255, 179, 0.486);
+  transition: all .1s ease-in-out;
+}
+
+
 
 .nav-menu-link i {
   font-size: 2.5rem;
@@ -194,31 +213,6 @@ main {
 
 /* container principal */
 
-.containerVideo {
-  width: 100vw;
-  height: 100vh;
-  filter: contrast(105%);
-  filter: drop-shadow(0 0px 50px rgba(0, 0, 255, 0.342));
-}
-
-.containerVideo video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.logoPrincipal {
-  width: 100%;
-  text-align: center;
-  font-size: 8rem;
-  color: white;
-  font-family: "sbc";
-  position: absolute;
-  top: 11%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .container{
   position: relative;
   width: 100vw;
@@ -242,7 +236,7 @@ main {
   font-size: 2rem;
   position: absolute;
   top: 45%;
-  border-color: rgba(190, 190, 190, 0.030);
+  border-color: rgba(190, 190, 190, 0.041);
 }
 
 .lineVertical{
@@ -252,7 +246,7 @@ main {
   top: 0%;
   left: 45%;
   transform: translate(-50%);
-  border-color: rgba(190, 190, 190, 0.025);
+  border-color: rgba(190, 190, 190, 0.062);
 }
 
 .container video{
@@ -260,7 +254,7 @@ main {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  filter:  contrast(118%) brightness(100%);
+  filter:  contrast(117%) brightness(98%);
 }
 
 .titleButtons{
@@ -280,20 +274,49 @@ main {
   font-size: 12rem;
   color: white;
   top: 25%;
-  left: 6%;
+  width: 140%;
+  letter-spacing: -2px;
+  animation: titleAnim 4s linear infinite;
+}
+
+@keyframes titleAnim {
+  0%{
+    text-shadow:none;
+
+  }
+  
+  50%{
+    text-shadow: 0 0 3rem rgb(134, 134, 134);
+  }
+
+  100%{
+    text-shadow: none;
+  }
 }
 
 .ButtonLarge{
   width: 17rem;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: bold;
   padding: 5px;
-  letter-spacing: 1px;
+  letter-spacing: -1px;
   cursor: pointer;
+  border: none;
+  transition: all .8s ease-in-out;
 }
 
 .ButtonLarge:hover{
-  filter: drop-shadow(0 0 10px rgba(179, 255, 179, 0.486));
+  color: #7dd18b;
+  background-color: #0000003d;
+  box-shadow: 0 0 .5rem rgba(179, 255, 179, 0.486);
+  border: none;
+  transition: all .4s ease-in-out;
+}
+
+.ButtonLarge:active{
+  width: 16.5rem;
+  font-size: 2.5rem;
+
 }
 
 
@@ -301,7 +324,119 @@ main {
 /* container 2 */
 
 .container2{
+  position: relative;
+  background-color: #000000;
   width: 100vw;
   height: 100vh;
-  position: relative;
+  font-size: 6rem;
+  text-align: center;
+  color: wheat;
+  overflow: hidden;
+}
+
+
+.container2-pasillo{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: all .05s ease-in-out;
+  z-index: 1;
+  opacity:1;
+  transform: scale(3);
+  
+}
+
+.container2-pasillo img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter:hue-rotate(300deg);
+
+}
+
+
+.container2-character{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transition: all .05s ease-in-out;
+  z-index: 2;
+  opacity:0;
+  transform: scale(1);
+}
+
+.container2-character img{ 
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  filter:hue-rotate(300deg);
+
+}
+
+
+
+@media (max-width: 1082px){
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    background-size: cover;
+    position: fixed;
+    top: -.9rem;
+    width: 100%;
+    padding: 0px 0;
+    height: 100vh;
+    right: 100%;
+    overflow-y: auto;
+    transition: right 0.5s;
+    filter:contrast(105%);
+    background-color: #000000;
+  }
+  
+  .nav-menu_visible {
+    right: 0%;
+  }
+
+  .nav-menu-item {
+    line-height: 80px;          
+  }
+  .nav-menu-item a{
+    font-size: 3.5rem;
+  }
+  .nav-menu-item a{
+    color: #7dd18b;
+    background-color: #0000003d;
+    box-shadow: 0 0 .5rem rgba(179, 255, 179, 0.486);
+    border: none;
+    transition: all .4s ease-in-out;
+}
+
+  .nav-menu-link:hover,
+  .nav-menu-link_active {
+    background: none;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-top: 1rem;
+    color: #7dd18b;
+    background-color: #0000003d;
+    box-shadow: 0 0 .5rem rgba(179, 255, 179, 0.486);
+    border: none;
+    transition: all .4s ease-in-out;
+  }
+
+  .nav-toggle:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  .fa-bars{
+    color: rgb(250, 238, 215);
+    font-size: 3.9rem;
+  }
+
 }
