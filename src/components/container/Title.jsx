@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonLarge from '../Button.jsx/ButtonLarge'
+import ButtonLarge from '../Buttons/ButtonLarge'
 
 export const Title = (props) => {
   return (

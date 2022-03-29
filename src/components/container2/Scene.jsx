@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react'
 import gsap from 'gsap'
-import backgroundPasillo from  "../../img/backgroundPasillo.jpg"
-import backgroundCharacter from "../../img/backgroundCharacter2.jpg"
+import backgroundPasillo from  "../../img/backgroundPasillo1.png"
+import backgroundCharacter from "../../img/backgroundCharacter22.jpg"
 import ScrollTrigger from 'gsap/ScrollTrigger'
-
-
+import SliderCharacter from './slider/SliderCharacter'
 
 
 const Container2Scene = () => {
@@ -15,7 +14,7 @@ const Container2Scene = () => {
         const container2 = document.querySelector(".container2")
         const container2Pasillo = document.querySelector(".container2-pasillo")
         const container2Character = document.querySelector(".container2-character")
-    
+        const sliderCharacter = document.querySelector(".container2-slider")
         gsap.timeline({
             scrollTrigger:{
                 trigger: container2,
@@ -27,8 +26,8 @@ const Container2Scene = () => {
     
         .to(container2Pasillo,{
             duration:18,
-            scale:"-=1.9",
-            yPercent:"-=1"
+            scale:"-=1.99",
+            yPercent:"-=.5"
         })
     
     
@@ -43,6 +42,9 @@ const Container2Scene = () => {
             opacity: 1
         })
     
+        .to(sliderCharacter,{
+            opacity: 1
+        })
     
    /*      .to(container2,{
             opacity:0,
@@ -60,7 +62,14 @@ const Container2Scene = () => {
             </div>
 
             <div className='container2-character'>
-                <img src={backgroundCharacter} alt="scene characters" ></img>
+                <div className="container2Background">
+                    <img src={backgroundCharacter} alt="scene characters" ></img>
+                </div>
+                <div className="container2-slider">
+                    <SliderCharacter />
+                </div>
+
+
             </div>
 
         </div>
