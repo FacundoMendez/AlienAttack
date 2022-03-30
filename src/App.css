@@ -749,14 +749,19 @@ main {
 
 
 
-/* buy */
-
+/* BUTTON BUY */
+.buttonBuyContainer{
+  position: relative;
+  width: 100vw;
+  height: 10rem;
+  top: 41.5rem;
+}
 
 .buy{
   position: absolute;
-  bottom:2rem;
   left: 50%;
-  transform: translate(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 10;
   cursor: pointer;
 }
@@ -874,20 +879,67 @@ main {
 
 
 /* popup Buy */
+.containerPopup{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.849);
+  z-index: 100;
+
+}
 
 .popupBuy{
   position: absolute;
-  top: -35rem;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.973);
-  width: 50rem;
-  height: 30rem;
+  background-color: rgba(0, 0, 0, 0.836);
+  width: 65rem;
   z-index: 10000;
-  opacity: 1;
-  display: inline-block;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03f4d4, 0 0 50px #03f4e8, 0 0 100px #03f4e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1rem;
+  
 }
 
+.titlePopup h2{
+  line-height: 5rem;
+  font-size: 3.2rem;
+  padding: 2rem;
+  letter-spacing: -6px;
+  font-weight: bold;
+  color: rgb(150, 250, 146);
+}
+
+.buttonsCheck{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 8rem;
+  position: relative;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+
+}
+
+.configButton .buttonBuy{
+  font-size: 3rem;
+  width: 15rem;
+  background-color: rgba(0, 0, 0, 0.966);
+  color: rgb(82, 255, 203);
+  cursor: pointer;
+
+}
 
 
 

@@ -11,9 +11,14 @@ import character1 from "../characters/character9.png"
 import { FaAngleLeft, FaAngleRight  } from "react-icons/fa";
 import Stats from './Stats'
 import Popup from '../../Buttons/Popup'
+import SliderFuncional from './SliderFuncional'
 
 const SliderCharacter = () => {
+
+  /* state */
     const[characterId, setCharacterId]= useState(1)
+    const[popupVenta, setPopupVenta]= useState(false)
+    console.log(popupVenta)
 
     const[characters, setCharacters]= useState([
       {
@@ -100,89 +105,12 @@ const SliderCharacter = () => {
 
     ])
 
-
-
-    
     useEffect(() =>{
-
-        const slider = document.querySelector('.slider');
-        const slides = document.querySelectorAll('.slide');
-        const prev = document.querySelector('#prev');
-        const next = document.querySelector('#next');
-        var activeIndex = 1;
-        var animating = false;
-        var translateDuration = .5;
-        
-        slides.forEach((slide,index) => {
-          slide.dataset.index = index+1;
-        })
-        
-        next.addEventListener('click', () => changeStep('next'));
-        prev.addEventListener('click', () => changeStep('prev'));
-        
-        function changeStep(direction, id) {
-          if(!animating) {
-            animating = true;
-            var transX;
-            var currentIndex = activeIndex;
-        
-            slides.forEach((slide,index) => {
-              (index + 1 === activeIndex)
-                ? slide.classList.add('active') 
-                : slide.classList.remove('active')
-            })
-        
-            if(direction === 'next') {
-              if(activeIndex < slides.length) {
-                transX = (100/slides.length)*activeIndex;
-                currentIndex++;
-                id= currentIndex;
-                setCharacterId(id)
-
-              } else {
-                 transX = 0;
-                 currentIndex = 1;
-                 id= currentIndex;
-                 setCharacterId(id)
-              }
-            } else {
-              if(activeIndex >= 2) {
-                transX = (100/slides.length)*(activeIndex-2);
-                currentIndex--;
-                id= currentIndex;
-                setCharacterId(id)
-
-              }  else {
-                 transX = (100-(100/slides.length));
-                 currentIndex = slides.length;
-                 id= currentIndex;
-                 setCharacterId(id)
-
-              }
-            }
-            document.querySelector(`[data-index="${activeIndex}"]`).style.animation = `motion-blur ${translateDuration}s ease-in forwards`;
-            setTimeout(() => {
-              slider.style.transform =`translateX(-${transX}%)`;
-            }, translateDuration*1000);
-            setTimeout(() => {
-              document.querySelector(`[data-index="${activeIndex}"]`).style.animation = `none`;
-              activeIndex = currentIndex;
-              animating = false;
-            }, translateDuration*1000*2);
-            
-          }
-
-          
-          /* function stats */
-
-
-        
-        }
+      SliderFuncional({setCharacterId})
     },[])  
 
 
-    const[id, setId]= useState(1)
-   
+  const[id, setId]= useState(1)
 
   return (
     <div className="wrapper">
@@ -220,45 +148,39 @@ const SliderCharacter = () => {
 
 
         <div className="buttons">
-        <span className="button button--next" id="next" onClick={() => setId(characterId-1)}> <b className="arrow">
+          <span className="button button--next" id="next" onClick={() => setId(characterId-1)}> <b className="arrow"><FaAngleRight /> </b></span>
+          <span className="button button--prev" id="prev" onClick={() => setId(characterId-1)}><b className="arrow" > <FaAngleLeft /> </b></span>
+          
+          <Stats 
+              id={characterId} 
+              characters={characters} 
+              setPopupVenta={setPopupVenta}
 
-          <FaAngleRight /> </b>   
-        </span>
+              valorFuerza={characters[id].fuerza}
+              titleFuerza="FUERZA"
+              textFuerza="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Iste hic libero minus explicabo est nemo, soluta id culpa 
+                consectetur doloribus eius aliquam quisquam rerum quasi cum 
+                voluptas ipsam placeat veniam"
 
-
-        <span className="button button--prev" id="prev" onClick={() => setId(characterId-1)}><b className="arrow" > <FaAngleLeft /> </b></span>
-        
-        <Stats 
-            characters={characters}
-
-            id={characterId}
-
-            valorFuerza={characters[id].fuerza}
-            titleFuerza="FUERZA"
-            textFuerza="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+              valorVelocidad={characters[id].velocidad}
+              titleVelocidad="VELOCIDAD"
+              textVelociad="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
               Iste hic libero minus explicabo est nemo, soluta id culpa 
               consectetur doloribus eius aliquam quisquam rerum quasi cum 
               voluptas ipsam placeat veniam"
 
-            valorVelocidad={characters[id].velocidad}
-            titleVelocidad="VELOCIDAD"
-            textVelociad="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Iste hic libero minus explicabo est nemo, soluta id culpa 
-            consectetur doloribus eius aliquam quisquam rerum quasi cum 
-            voluptas ipsam placeat veniam"
+              valorHp={characters[id].vida}
+              textHp="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+              Iste hic libero minus explicabo est nemo, soluta id culpa 
+              consectetur doloribus eius aliquam quisquam rerum quasi cum 
+              voluptas ipsam placeat veniam"
+              titleHp="VIDA"
+          />
 
-            valorHp={characters[id].vida}
-            textHp="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Iste hic libero minus explicabo est nemo, soluta id culpa 
-            consectetur doloribus eius aliquam quisquam rerum quasi cum 
-            voluptas ipsam placeat veniam"
-            titleHp="VIDA"
-            />
-       
+          {popupVenta ? <Popup setPopupVenta={setPopupVenta}/> : null}
+      </div>
     </div>
-      
-  </div>
-
   )
 }
 

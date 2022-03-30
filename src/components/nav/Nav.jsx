@@ -33,7 +33,7 @@ function Nav() {
                             </a>
                         </li>
                         <li className="nav-menu-item">
-                            <a href="#models" className="nav-menu-link nav-link">
+                            <a href="#slider" className="nav-menu-link nav-link">
                                 Characters
                             </a>
                         </li>

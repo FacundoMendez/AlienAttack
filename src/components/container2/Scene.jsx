@@ -61,11 +61,11 @@ const Container2Scene = () => {
                 <img src={backgroundPasillo} alt="Pasillo" ></img>
             </div>
 
-            <div className='container2-character'>
+            <div id="slider" className='container2-character'>
                 <div className="container2Background">
                     <img src={backgroundCharacter} alt="scene characters" ></img>
                 </div>
-                <div className="container2-slider">
+                <div  className="container2-slider">
                     <SliderCharacter />
                 </div>
 

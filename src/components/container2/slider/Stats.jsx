@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import Popup from '../../Buttons/Popup'
-
+import ButtonBuy from '../../Buttons/buttonBuy/ButtonBuy'
 const Stats = (props) => {
 
-  return (
-      <div className='charactersStats'>
-        <div className="stats">
+    return (
+        <div className='charactersStats'>
+            <div className="stats">
                 <div className="ss hp">
                     <p className="valor">{props.valorHp}</p>
                     <div className="statsHP">
@@ -13,7 +12,6 @@ const Stats = (props) => {
                         <p>{props.textHp}</p>
                     </div>
                 </div>
-
                 <div className="ss velocidad">  
                     <p className="valor">{props.valorVelocidad}</p>
                     <div className="statsVelocidad">
@@ -21,7 +19,6 @@ const Stats = (props) => {
                         <p>{props.textVelociad}</p>
                     </div>
                 </div>
-
                 <div className="ss fuerza">
                     <p className="valor">{props.valorFuerza}</p>
                     <div className="statsFuerza">
@@ -30,26 +27,13 @@ const Stats = (props) => {
                     </div>
                 </div>
             </div>
-
-            
-            <div id={props.id} className="buy" onClick={()=> {
-                    const characterObj = props.characters.filter( e => e.id== props.id)
-                    console.log(...characterObj)
-                }} >
-
-                <p className="buttonBuy">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                        BUY
-                </p>
-
-            </div>
-
-             
-      </div>
-  )
+            <ButtonBuy 
+                id={props.characterId} 
+                characters={props.characters} 
+                setPopupVenta={props.setPopupVenta}
+            />
+        </div>
+    )
 }
 
 export default Stats
