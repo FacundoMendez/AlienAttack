@@ -1,5 +1,6 @@
 import React from 'react'
 import ButtonLarge from '../Buttons/ButtonLarge'
+import ButtonBuyDiseño from '../Buttons/buttonBuy/ButtonBuyDiseño'
 
 export const Title = (props) => {
   return (
@@ -7,7 +8,10 @@ export const Title = (props) => {
         <div className='title'>
             <p>Alien Attack</p> 
         </div>
-        <ButtonLarge text={props.text}/>
+        <ButtonBuyDiseño 
+          nameClass="buttonPlay"
+          text={props.text}
+        />
     </div>
   )
 }

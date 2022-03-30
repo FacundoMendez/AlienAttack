@@ -18,7 +18,6 @@ const SliderCharacter = () => {
   /* state */
     const[characterId, setCharacterId]= useState(1)
     const[popupVenta, setPopupVenta]= useState(false)
-    console.log(popupVenta)
 
     const[characters, setCharacters]= useState([
       {
@@ -152,8 +151,7 @@ const SliderCharacter = () => {
           <span className="button button--prev" id="prev" onClick={() => setId(characterId-1)}><b className="arrow" > <FaAngleLeft /> </b></span>
           
           <Stats 
-              id={characterId} 
-              characters={characters} 
+              
               setPopupVenta={setPopupVenta}
 
               valorFuerza={characters[id].fuerza}
@@ -178,7 +176,11 @@ const SliderCharacter = () => {
               titleHp="VIDA"
           />
 
-          {popupVenta ? <Popup setPopupVenta={setPopupVenta}/> : null}
+          {popupVenta ? <Popup 
+            setPopupVenta={setPopupVenta}
+            id={characterId} 
+            characters={characters} 
+            /> : null}
       </div>
     </div>
   )

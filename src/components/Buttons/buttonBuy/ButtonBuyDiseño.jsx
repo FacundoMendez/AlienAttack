@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ButtonBuyDiseño = ({text}) => {
+const ButtonBuyDiseño = ({nameClass,text}) => {
   return (
-    <div className='configButton'>
+    <div className={nameClass}>
         <p className="buttonBuy">
             <span></span>
             <span></span>

@@ -1,7 +1,7 @@
 import React, {useState}from 'react'
 import ButtonBuyDiseño from './buttonBuy/ButtonBuyDiseño'
 
-const Popup = ({setPopupVenta}) => {
+const Popup = (props) => {
 
   return (
     <div className="containerPopup">
@@ -11,11 +11,22 @@ const Popup = ({setPopupVenta}) => {
           </div>
           <div className="buttonsCheck">
             
-            <div className='no' onClick={() => {setPopupVenta(false)}}>
-              <ButtonBuyDiseño text={"NO"} />
+            <div className='no' onClick={() => {props.setPopupVenta(false)}}>
+              <ButtonBuyDiseño 
+                nameClass="configButton" 
+                text={"NO"} 
+              />
             </div>
-            <div className='yes' onClick={() => {setPopupVenta(false)}}>
-                <ButtonBuyDiseño text={"YES"} />
+            <div className='yes' onClick={() => {
+              props.setPopupVenta(false)
+              const characterObj = props.characters.filter( e => e.id== props.id);
+              console.log(...characterObj);
+              }}>
+                
+                <ButtonBuyDiseño  
+                  nameClass="configButton" 
+                  text={"YES"} 
+                />
             </div>
           </div>
         </div>

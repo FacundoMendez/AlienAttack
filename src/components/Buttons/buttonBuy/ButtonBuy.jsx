@@ -4,8 +4,6 @@ const ButtonBuy = (props) => {
     return (
         <div className="buttonBuyContainer">
             <div id={props.id} className="buy" onClick={()=> {
-                    const characterObj = props.characters.filter( e => e.id== props.id);
-                    console.log(...characterObj);
                     props.setPopupVenta(true);
                 }} >
                 <p className="buttonBuy">

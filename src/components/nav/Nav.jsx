@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import imgCoin from "../../img/coin.png"
+import imgCoin from "../../img/token.png"
 import navFuncional from './navFuncional';
 import navScroll from './scrollNav';
 
@@ -42,15 +42,14 @@ function Nav() {
                                 User
                             </a>
                         </li>
-                        {/*  <li className="nav-menu-item nav2" >
-                            <div className='coin'>
-                                <img src={imgCoin} alt="coin" />
+                        <li className="nav-menu-item nav2" >
+                            <div className='containerCoin'>
+                                <div className='coin'>
+                                    <img src={imgCoin} alt="coin" />
+                                </div>
+                                <div className='contadorCoin'>1000 ATCK</div>
                             </div>
-                            <div className='contadorCoin'>1000</div>
-                            <div className='play'>
-                                <a href="#" className="nav-menu-link  nav-link"> Play </a>
-                            </div>
-                        </li> */}
+                        </li> 
                     </ul>
                 </div>
             </nav>
