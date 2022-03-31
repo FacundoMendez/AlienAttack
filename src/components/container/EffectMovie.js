@@ -28,7 +28,7 @@ const EffectMovie = () => {
 
     // Play Noise
     const paintNoise = () => {
-        if (frame === 9) {
+        if (frame === 4) {
             frame = 0;
         } else {
             frame++;
@@ -56,7 +56,7 @@ const EffectMovie = () => {
         canvas.width = wWidth;
         canvas.height = wHeight;
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 15; i++) {
             createNoise();
         }
 
