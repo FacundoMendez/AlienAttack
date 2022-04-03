@@ -4,6 +4,9 @@ const Stats = (props) => {
 
     return (
         <div className='charactersStats'>
+            <div className="precio">
+                 <p className="valorPrecio">{props.precio} Atck</p>
+             </div>
             <div className="stats">
                 <div className="ss hp">
                     <p className="valor">{props.valorHp}</p>
@@ -26,6 +29,8 @@ const Stats = (props) => {
                         <p>{props.textFuerza}</p>
                     </div>
                 </div>
+
+             
             </div>
             <ButtonBuy 
                 id={props.characterId} 

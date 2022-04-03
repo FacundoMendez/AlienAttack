@@ -154,6 +154,8 @@ const SliderCharacter = () => {
               
               setPopupVenta={setPopupVenta}
 
+              precio={characters[id].precio}
+
               valorFuerza={characters[id].fuerza}
               titleFuerza="FUERZA"
               textFuerza="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 

@@ -1,7 +1,11 @@
-import React, {useState}from 'react'
+import React, {useState, useContext}from 'react'
 import ButtonBuyDiseño from './buttonBuy/ButtonBuyDiseño'
+import TokenContext from '../context/TokenContext'
+import gsap from 'gsap'
 
 const Popup = (props) => {
+
+  const contextToken = useContext(TokenContext)
 
   return (
     <div className="containerPopup">
@@ -18,9 +22,30 @@ const Popup = (props) => {
               />
             </div>
             <div className='yes' onClick={() => {
-              props.setPopupVenta(false)
               const characterObj = props.characters.filter( e => e.id== props.id);
-              console.log(...characterObj);
+              if(contextToken.token - characterObj[0].precio >= 0){
+                console.log(...characterObj);
+                contextToken.setToken(contextToken.token - characterObj[0].precio)
+                props.setPopupVenta(false)
+
+       
+              }else{
+                const tokenNav = document.querySelector(".contadorCoin");
+
+                gsap.to(tokenNav,{
+                  color:"red",
+                  y:2,
+                  ease: "elastic.out(1, 0.3)",
+                  duration:.9,
+                })
+               
+                gsap.to(tokenNav,{
+                  delay:1,
+                  y:0,
+                  color:"#bdffeefd",
+                  duration:1,
+                })
+              }
               }}>
                 
                 <ButtonBuyDiseño  

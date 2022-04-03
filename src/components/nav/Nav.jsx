@@ -1,15 +1,18 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useContext} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import imgCoin from "../../img/token.png"
 import navFuncional from './navFuncional';
 import navScroll from './scrollNav';
+import TokenContext from '../context/TokenContext';
 
 
 
 
 
 function Nav() {
+
+    const contextToken = useContext(TokenContext)
 
     useEffect(() => {
         navScroll();
@@ -47,7 +50,7 @@ function Nav() {
                                 <div className='coin'>
                                     <img src={imgCoin} alt="coin" />
                                 </div>
-                                <div className='contadorCoin'>1000 ATCK</div>
+                                <div className='contadorCoin'>{contextToken.token} <span> ATCK </span></div>
                             </div>
                         </li> 
                     </ul>
