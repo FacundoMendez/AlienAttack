@@ -28,8 +28,10 @@ const Popup = (props) => {
                 contextToken.setToken(contextToken.token - characterObj[0].precio)
                 props.setPopupVenta(false)
 
-                sessionStorage.setItem("confirmacion de venta",true)
                 sessionStorage.setItem("Imagen del producto", props.img)
+
+                sessionStorage.setItem("confirmacion de venta",true)
+                
 
               }else{
                 sessionStorage.setItem("confirmacion de venta",false)
@@ -40,7 +42,9 @@ const Popup = (props) => {
                   y:2,
                   ease: "elastic.out(1, 0.3)",
                   duration:.9,
+
                 })
+                
                
                 gsap.to(tokenNav,{
                   delay:1,

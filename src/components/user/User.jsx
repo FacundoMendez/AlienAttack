@@ -37,8 +37,7 @@ const User = () => {
             </ul>
         </div>
         <div className='containerView'>
-            {cards ? <Cards/> : <NoCards /> }
-
+            {cards ? <Cards/> : <NoCards /> } 
         </div>
     </div>
 

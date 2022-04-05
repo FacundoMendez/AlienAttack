@@ -14,7 +14,7 @@
 
   
   .card {
-    background: #191c29;
+    background: rgba(8, 8, 8, 0.932);
     width: 30rem;
     height: 40rem;
     padding: 3px;
@@ -77,3 +77,12 @@
     }
   }
   
+.cardImg{
+  width: 100%;
+  
+}
+
+.cardImg img{
+  object-fit: conver;
+  width: 100%;
+}
