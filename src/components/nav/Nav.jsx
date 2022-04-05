@@ -14,6 +14,7 @@ function Nav() {
 
     const contextToken = useContext(TokenContext)
 
+
     useEffect(() => {
         navScroll();
 
@@ -31,18 +32,23 @@ function Nav() {
                     </button>
                     <ul className="navVisible nav-menu">
                         <li className="nav-menu-item">
-                            <a href="../../public/index.html" className="nav-menu-link nav-link">
+                            <a href="/" className="nav-menu-link nav-link">
                                 Home
                             </a>
                         </li>
                         <li className="nav-menu-item">
                             <a href="#slider" className="nav-menu-link nav-link">
-                                Characters
+                                Store
                             </a>
                         </li>
                         <li className="nav-menu-item">
-                            <a href="#" className="nav-menu-link nav-link">
+                            <a href="/user" className="nav-menu-link nav-link">
                                 User
+                            </a>
+                        </li>
+                        <li className="nav-menu-item">
+                            <a href="/login" className="nav-menu-link nav-link">
+                                Login
                             </a>
                         </li>
                         <li className="nav-menu-item nav2" >

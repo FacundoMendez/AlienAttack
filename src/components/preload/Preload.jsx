@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import gsap from 'gsap'
-import EffectMovie from '../container/EffectMovie'
+
 const Preload = () => {
 
     useEffect(()=>{

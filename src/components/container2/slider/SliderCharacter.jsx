@@ -19,7 +19,7 @@ const SliderCharacter = () => {
     const[characterId, setCharacterId]= useState(1)
     const[popupVenta, setPopupVenta]= useState(false)
 
-    const[characters, setCharacters]= useState([
+    const[characters /* , setCharacters */]= useState([
       {
         id:1,
         nombre:"",
@@ -117,31 +117,31 @@ const SliderCharacter = () => {
 
         <div className="slider">
             <div id="1" className="character1 slide  ">
-                <img  src={character1} />
+                <img  src={character1} alt="character"/>
             </div>
             <div id="2" className="slide character2">
-                <img src={character2} />
+                <img src={character2} alt="character" />
             </div>
             <div id="3" className="slide character3">
-                <img src={character3} />
+                <img src={character3} alt="character"/>
             </div>
             <div id="4" className="slide character4">
-                <img src={character4} />
+                <img src={character4} alt="character"/>
             </div>
             <div id="5" className="slide character5">
-                <img src={character5} />
+                <img src={character5} alt="character" />
             </div>
             <div id="6" className="slide character6">
-                <img src={character6} />
+                <img src={character6} alt="character"/>
             </div>
             <div id="7" className="slide character7">
-                <img src={character7} />
+                <img src={character7} alt="character"/>
             </div>
             <div id="8" className="slide character8">
-                <img src={character8} />
+                <img src={character8} alt="character"/>
             </div>
             <div id="9" className="slide character9">
-                <img src={character9} />
+                <img src={character9} alt="character"/>
             </div>
         </div>
 
@@ -154,7 +154,7 @@ const SliderCharacter = () => {
               
               setPopupVenta={setPopupVenta}
 
-              precio={characters[id].precio}
+              precio={characters[characterId-1].precio}
 
               valorFuerza={characters[id].fuerza}
               titleFuerza="FUERZA"
@@ -182,6 +182,7 @@ const SliderCharacter = () => {
             setPopupVenta={setPopupVenta}
             id={characterId} 
             characters={characters} 
+            img={characters[id].img} 
             /> : null}
       </div>
     </div>

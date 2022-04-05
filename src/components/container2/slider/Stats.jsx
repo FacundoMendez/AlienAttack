@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import ButtonBuy from '../../Buttons/buttonBuy/ButtonBuy'
-const Stats = (props) => {
 
+
+const Stats = (props) => {
     return (
         <div className='charactersStats'>
             <div className="precio">

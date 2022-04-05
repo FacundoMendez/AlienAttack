@@ -105,7 +105,6 @@ html {
   width: 100%;
   height: 7.2rem;
   top: 1%;
-  filter: drop-shadow(0 0 40px #00fff2ab);
 }
 
 .logoOculto {
@@ -714,6 +713,8 @@ main {
   text-align: center;
   transform: translate(-50%, -50%);
 }
+
+
 
 .valorPrecio{
   font-size: 3rem;

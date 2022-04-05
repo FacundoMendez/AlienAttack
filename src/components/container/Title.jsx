@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import ButtonBuyDiseño from '../Buttons/buttonBuy/ButtonBuyDiseño'
 
 export const Title = (props) => {

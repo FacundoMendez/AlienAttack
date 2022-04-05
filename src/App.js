@@ -1,47 +1,34 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Nav from './components/nav/Nav';
-import VideoBackground from "./img/videos/backgroundVideoAlien.mp4"
-import { Title } from './components/container/Title';
-import Container2Scene from './components/container2/Scene';
-import EffectMovie from './components/container/EffectMovie';
-import Preload from './components/preload/Preload';
-import TokenContext from './components/context/TokenContext.js';
+import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
+import Home from './components/home/Home';
+import Nav from "./components/nav/Nav";
+import User from './components/user/User';
+import Login from "./components/login/Login"
+
+import TokenContext from './components/context/TokenContext.js'; 
+
 
 function App() {
 
   const [token, setToken] = useState(1000)
-
-  const usu= "facu"
-  useEffect(() => {
-    EffectMovie()
-  },[])
-
+  const [getCharacterBuy, setGetCharacterBuy] = useState()
+  const [confirmationBuy, setConfirmationBuy] = useState(false)
   return (
-    <TokenContext.Provider value={{token, setToken}} >
-      <div className="App">
-          <Preload />
-          <header>
-            <Nav />
-          </header>
-          <main className='main'>
+    <BrowserRouter>
+      <TokenContext.Provider value={{token, setToken, getCharacterBuy, setGetCharacterBuy ,confirmationBuy, setConfirmationBuy}} >
+        <Nav />
 
-              <div className='container1Title'>
-                  <hr className='lineHorizontal'></hr>
-                  <hr className='lineVertical'></hr>
-                  <Title text="Play"/>
-              </div>
+        <Routes >
+          <Route path='/user' element={<User />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/' element={<Home />}/>
+          <Route path='*' element={<Navigate to="/" />}/>
+        </Routes>
 
-              <canvas id="container" className='container'> </canvas>
-
-              <div className='container1'>
-                  <video src={VideoBackground} autoPlay loop muted ></video>
-              </div>
-              <Container2Scene/>
-          </main>
-      </div>
-    </TokenContext.Provider>
-  );
+      </TokenContext.Provider>
+    </BrowserRouter>
+  )
 }
 
 export default App;

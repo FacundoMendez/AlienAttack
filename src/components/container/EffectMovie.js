@@ -66,7 +66,6 @@ const EffectMovie = () => {
 
     // Reset
     let resizeThrottle;
-    const reset = () => {
         window.addEventListener('resize', () => {
             window.clearTimeout(resizeThrottle);
 
@@ -75,16 +74,13 @@ const EffectMovie = () => {
                 setup();
             }, 200);
         }, false);
-    };
 
 
     // Init
-    const init = (() => {
         canvas = document.getElementById('container');
         ctx = canvas.getContext('2d');
 
         setup();
-    })();
 
 }
 
