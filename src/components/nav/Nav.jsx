@@ -9,7 +9,6 @@ import TokenContext from '../context/TokenContext';
 
 
 
-
 function Nav() {
 
     const contextToken = useContext(TokenContext)
@@ -17,7 +16,6 @@ function Nav() {
 
     useEffect(() => {
         navScroll();
-
     },[])
 
     return (
@@ -56,7 +54,10 @@ function Nav() {
                                 <div className='coin'>
                                     <img src={imgCoin} alt="coin" />
                                 </div>
-                                <div className='contadorCoin'>{contextToken.token} <span> ATCK </span></div>
+                                <div className='contadorCoin'>
+                                    <p className='contador'>{contextToken.token}</p> 
+                                    <span> ATCK </span>
+                                </div>
                             </div>
                         </li> 
                     </ul>

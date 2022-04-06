@@ -5,18 +5,18 @@ import Home from './components/home/Home';
 import Nav from "./components/nav/Nav";
 import User from './components/user/User';
 import Login from "./components/login/Login"
-
 import TokenContext from './components/context/TokenContext.js'; 
 
 
 function App() {
 
   const [token, setToken] = useState(1000)
-  const [getCharacterBuy, setGetCharacterBuy] = useState()
   const [confirmationBuy, setConfirmationBuy] = useState(false)
+
+
   return (
     <BrowserRouter>
-      <TokenContext.Provider value={{token, setToken, getCharacterBuy, setGetCharacterBuy ,confirmationBuy, setConfirmationBuy}} >
+      <TokenContext.Provider value={{token, setToken, confirmationBuy, setConfirmationBuy}} >
         <Nav />
 
         <Routes >

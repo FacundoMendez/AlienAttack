@@ -245,6 +245,9 @@ html {
   filter: drop-shadow(0 0px 2px rgba(2, 255, 204, 0.705));
 }
 
+.contador{
+  display: inline-block;
+}
 .coin:hover {
   color: #bdffeefd;
   background-color: #00000060;

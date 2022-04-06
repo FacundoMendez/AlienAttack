@@ -31,7 +31,7 @@ const Popup = (props) => {
                 sessionStorage.setItem("Imagen del producto", props.img)
 
                 sessionStorage.setItem("confirmacion de venta",true)
-                
+
 
               }else{
                 sessionStorage.setItem("confirmacion de venta",false)

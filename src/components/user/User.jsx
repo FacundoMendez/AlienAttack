@@ -1,12 +1,10 @@
-import React,{useState, useContext, useEffect} from 'react'
+import React,{useState, useEffect} from 'react'
 import "./User.css"
 import Cards from './Cards'
-import TokenContext from '../context/TokenContext'
 import NoCards from './NoCards'
 
 const User = () => {
     let confirmacionVenta = sessionStorage.getItem("confirmacion de venta")
-    const contextToken = useContext(TokenContext)
 
     const[cards, setCards]= useState(false)
 
