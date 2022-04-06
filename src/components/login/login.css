@@ -1,0 +1,97 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    user-select: none;
+    font-family:aileron;
+  }
+
+  .boxFormulario{
+      width: 100vw;
+      height: 100vh;
+  }
+  
+  .formularioContacto {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .form {
+    position: relative;
+    padding: 0px 40px 60px;
+    width: 500px;
+    background: #131419;
+    border-radius: 10px;
+    box-shadow: -5px -5px 10px 0 rgba(255, 255, 255, 0.45),
+      5px 5px 15px 0 rgba(0, 0, 0, 0.4);
+    transition: 1.5s;
+  }
+
+  .form .input {
+    text-align: center;
+    margin-top: 40px;
+    transition: 1.5s;
+  }
+  .form .input .inputBox {
+    margin-top: 50px;
+  }
+  .form .input .inputBox label {
+    display: block;
+    color: rgb(153, 255, 246);
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
+  .form .input .inputBox input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: #131419;
+    outline: none;
+    color: rgb(153, 255, 246);
+    font-size: 2rem;
+    letter-spacing: -3px;
+    padding: 20px 15px;
+    border-radius: 40px;
+    box-shadow: -5px -5px 10px 0 rgba(255, 255, 255, 0.1),
+      5px 5px 15px 0 rgba(0, 0, 0, 0.8);
+    transition: 1.5s;
+  }
+  .form .input .inputBox button {
+    width: 380px;
+    height: 50px;
+    border: none;
+    background: #131419;
+    outline: none;
+    color: rgb(153, 255, 246);
+    font-size: 2.5rem;
+    padding: 10px 15px;
+    border-radius: 40px;
+    box-shadow: inset -5px -5px 10px 0 rgba(255, 255, 255, 0.1),
+      inset 5px 5px 15px 0 rgba(0, 0, 0, 0.8);
+    transition: 1.5s;
+  }
+
+  .singIn{
+    color: rgb(153, 255, 246);
+    font-size: 2.5rem;
+    text-decoration: none;
+  }
+
+  .form .input .inputBox button:active {
+    box-shadow: 0 0 5px #03e8f4cc, 0 0 15px #03f4d4da, 0 0 40px #03f4e8c7, 0 0 80px #03f4e041;
+  }
+  .form p {
+    color: #555;
+    margin-top: 30px;
+    font-size: 2.2rem;
+    letter-spacing: -2px;
+
+}
+  .form p a {
+    color: rgb(153, 255, 246);
+  }
+  
