@@ -925,7 +925,6 @@ main {
   border-radius: 15px;
   filter: drop-shadow(0 0 5px black);
   z-index: 110;
-
   user-select: none;
 }
 .buttonBuy:hover {
@@ -1091,6 +1090,90 @@ main {
 
 
 /* media querys */
+
+@media (max-width: 1400px){
+
+/* container 1 title */
+
+  .titleButtons{
+    padding-bottom: 8rem;
+  }
+
+  .title p{
+    font-size: 10rem;
+    top: 35%;
+  }
+
+
+  /* characters */
+
+
+  .character1 img{
+    width:17vw;
+    margin-top: 12rem;
+  }
+
+  .character2 img{
+    width: 37vw;
+    margin-top: 12rem;
+  }
+
+  .character3 img{
+    width: 37vw;
+    margin-top: 13rem;
+  }
+
+  .character4 img{
+    width: 38vw;
+    margin-top: 13rem;
+  }
+  .character5 img{
+    width: 24.5vw;
+    margin-top: 13.5rem;
+  }
+  .character6 img{
+    width: 11.5vw;
+    margin-top: 13.5rem;
+  }
+  .character7 img{
+    width: 37.5vw;
+    margin-top: 12rem;
+  }
+  .character8 img{
+    width: 36.5vw;
+    margin-top: 13rem;
+  }
+  .character9 img{
+    width: 29vw;
+    margin-top: 12rem;
+  }
+
+  /* button buy */
+  .buttonBuyContainer{
+    top: 27.5rem;
+  }
+  
+  /* stats */
+  .stats{
+    width: 20%;
+  }
+  
+  
+  .ss{
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .valor{
+    font-size: 2.5rem;
+  }
+
+  .ss:hover > .valor {
+    font-size: 3rem;
+  }
+  
+}
+
 
 
 @media (max-width: 1082px){
