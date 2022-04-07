@@ -34,8 +34,6 @@ const Popup = (props) => {
 
 
               }else{
-                sessionStorage.setItem("confirmacion de venta",false)
-
                 const tokenNav = document.querySelector(".contadorCoin");
                 gsap.to(tokenNav,{
                   color:"red",

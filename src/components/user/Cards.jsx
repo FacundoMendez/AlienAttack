@@ -1,7 +1,7 @@
 import React from 'react'
 import "./cards.css"
 
-const Cards = (buy) => {
+const Cards = () => {
   let img = sessionStorage.getItem("Imagen del producto")
   return (
     <div className="card">

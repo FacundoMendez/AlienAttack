@@ -182,7 +182,7 @@ const SliderCharacter = () => {
             setPopupVenta={setPopupVenta}
             id={characterId} 
             characters={characters} 
-            img={characters[id-1].img} 
+            img={characters[characterId-1].img} 
             /> : null}
       </div>
     </div>

@@ -1,8 +1,10 @@
-import React from 'react'
-import {Link} from "react-router-dom";
-
+import React,{useState} from 'react'
 import "./login.css"
+import LoginUser from './LoginUser';
+
 const Login = () => {
+  
+
   return (
     <div className="boxFormulario">
       <section className='formularioContacto'>
@@ -17,14 +19,13 @@ const Login = () => {
               <input type="password" placeholder="........"required />
             </div>
             <div className="inputBox">
-              <button id="button">
-                <Link className='singIn' to="/User">Sing In</Link>
-              </button>
+              <LoginUser />
             </div>
+
           </div>
           <p>Forget password? <a href="#">Click Here</a></p>
         </div>
-    </section>
+      </section>
     </div>
 
   )
