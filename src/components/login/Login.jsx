@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import "./login.css"
 import LoginUser from './LoginUser';
 
@@ -12,22 +12,20 @@ const Login = () => {
           <div className="input">
             <div className="inputBox">
               <label>Username</label>
-              <input type="email" placeholder="Example@gmail.com" required />
+              <input className='email' type="email" placeholder="Example@gmail.com" required />
             </div>
             <div className="inputBox">
               <label>Password</label>
-              <input type="password" placeholder="........"required />
+              <input className='password' type="password" placeholder="........" required />
             </div>
             <div className="inputBox">
               <LoginUser />
             </div>
-
           </div>
-          <p>Forget password? <a href="#">Click Here</a></p>
+          <p>Forget password? <a href="/">Click Here</a></p>
         </div>
       </section>
     </div>
-
   )
 }
 

@@ -1,15 +1,12 @@
 import React, {useEffect} from 'react'
 import gsap from 'gsap'
+import preloadFuncional from './preloadFuncional'
 
 const Preload = () => {
 
     useEffect(()=>{
 
-        let preload = document.querySelector(".preload");  
-        setTimeout(function(){
-            preload.classList.add("cerrar");
-            preload.style.zIndex=0;
-        },3000)
+        preloadFuncional()
         
         gsap.to(".tv",{
             delay:.5,

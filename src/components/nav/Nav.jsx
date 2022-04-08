@@ -7,16 +7,14 @@ import navScroll from './scrollNav';
 import TokenContext from '../context/TokenContext';
 
 
-
-
 function Nav() {
 
     const contextToken = useContext(TokenContext)
 
-
     useEffect(() => {
         navScroll();
     },[])
+    
 
     return (
         <header className="header">
@@ -29,26 +27,31 @@ function Nav() {
                         <FontAwesomeIcon icon={faBars} />
                     </button>
                     <ul className="navVisible nav-menu">
+
                         <li className="nav-menu-item">
                             <a href="/" className="nav-menu-link nav-link">
                                 Home
                             </a>
                         </li>
+
                         <li className="nav-menu-item">
                             <a href="#slider" className="nav-menu-link nav-link">
                                 Store
                             </a>
                         </li>
-                        <li className="nav-menu-item">
-                            <a href="/user" className="nav-menu-link nav-link">
-                                User
-                            </a>
-                        </li>
+
                         <li className="nav-menu-item">
                             <a href="/login" className="nav-menu-link nav-link">
                                 Login
                             </a>
                         </li>
+
+                        <li className="nav-menu-item">
+                            <a href="/user" className="nav-menu-link nav-link">
+                                User
+                            </a>
+                        </li>
+
                         <li className="nav-menu-item nav2" >
                             <div className='containerCoin'>
                                 <div className='coin'>
@@ -60,6 +63,7 @@ function Nav() {
                                 </div>
                             </div>
                         </li> 
+
                     </ul>
                 </div>
             </nav>

@@ -1,24 +1,15 @@
-import React,{useState} from 'react'
+import React from 'react'
 import {Link} from "react-router-dom";
 
-const LoginUser = (props) => {
-  const [active, setActive]= useState(false)
-  const usuarioActivo = () =>{
-    if (active){
-        localStorage.setItem("usuarioActivo", active)
-      }
-  }
+const LoginUser = () => {
 
   return (
-        <Link className='singIn' to="/User" onClick={() => {setActive(true)}}>
-
-            <button id="button"  onClick={()=>{
-                console.log(active)
-                usuarioActivo()
+        <Link className='singIn' to="/User" >
+            <button id="button" onClick={()=>{
+                localStorage.setItem("usuarioActivo", true);
             }}>Sing In</button>
 
         </Link>
-
     )
 }
 
