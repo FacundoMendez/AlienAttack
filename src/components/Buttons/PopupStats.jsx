@@ -1,14 +1,14 @@
-import React, {useContext }from 'react'
+import React, {useContext}from 'react'
 import ButtonBuyDiseño from './buttonBuy/ButtonBuyDiseño'
 import TokenContext from '../context/TokenContext'
-import noCall from './NoCall'
+import noCash from './NoCash'
 import "./buttonStats/stats.css"
 import VidaStats from './buttonStats/VidaStats'
 
 
 const PopupStats = (props) => {
   const contextToken = useContext(TokenContext)
-
+  
   return (
     <div className="containerPopupStats">
         <div className='popupStats'>
@@ -16,8 +16,8 @@ const PopupStats = (props) => {
               <h2>Do you want to increase your character's skill?</h2>
           </div>
 
-
           <VidaStats />
+          
 
           <div className="buttonsCheckStats">
             
@@ -38,7 +38,7 @@ const PopupStats = (props) => {
 
 
               }else{
-                noCall()
+                noCash()
               }
 
               }}>
@@ -48,6 +48,7 @@ const PopupStats = (props) => {
                   text={"YES"} 
                 />
             </div>
+
           </div>
         </div>
     </div>

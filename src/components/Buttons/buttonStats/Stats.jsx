@@ -40,6 +40,11 @@ const Stats = (props) => {
 
             </div>
  
+            <ButtonBuy 
+                id={props.characterId}
+                characters={props.characters}
+                setPopupVenta={props.setPopupVenta}
+            />
         </div>
     )
 }

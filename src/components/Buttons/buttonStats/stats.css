@@ -74,6 +74,107 @@
 }
 
 
-
 /* slider stats buy */
+.barStats{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.cantStatsPorcent{
+  font-size: 4rem;
+  letter-spacing: -5px;
+  color: #97fff6;
+  text-shadow: 0 0 .4rem #97fff6;
+}
 
+.rango{
+  width: 300px;
+  border-radius: 15px;
+}
+
+.rango[type=range] {
+  border-radius: 15px;
+  margin: 9.05px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+.rango[type=range]:focus {
+  outline: none;
+}
+.rango[type=range]::-webkit-slider-runnable-track {
+  background: rgba(141, 255, 255, 0.9);
+  box-shadow: 0 0 .5rem  rgba(141, 255, 255, 0.9);
+  height: 9px;
+  cursor: pointer;
+}
+.rango[type=range]::-webkit-slider-thumb {
+  margin-top: -9.85px;
+  width: 14px;
+  height: 28px;
+  background: #caffff;
+  border: 0.4px solid #000000;
+  box-shadow: 0 0 2rem  rgba(149, 255, 158, 0.9);
+
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.rango[type=range]:focus::-webkit-slider-runnable-track {
+  background: #c9fafa;
+}
+.rango[type=range]::-moz-range-track {
+  background: rgba(141, 255, 255, 0.9);
+  border: 0.8px solid #010001;
+  width: 100%;
+  height: 9.9px;
+  cursor: pointer;
+}
+.rango[type=range]::-moz-range-thumb {
+  width: 14px;
+  height: 28px;
+  background: #caffff;
+  border: 0.4px solid #000000;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.rango[type=range]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 9.05px 0;
+  color: transparent;
+  width: 100%;
+  height: 9.9px;
+  cursor: pointer;
+}
+.rango[type=range]::-ms-fill-lower {
+  background: #4bffff;
+  border: 0.8px solid #010001;
+}
+.rango[type=range]::-ms-fill-upper {
+  background: rgba(141, 255, 255, 0.9);
+  border: 0.8px solid #010001;
+}
+.rango[type=range]::-ms-thumb {
+  width: 14px;
+  height: 28px;
+  background: #caffff;
+  border: 0.4px solid #000000;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 0px;
+}
+.rango[type=range]:focus::-ms-fill-lower {
+  background: rgba(141, 255, 255, 0.9);
+}
+.rango[type=range]:focus::-ms-fill-upper {
+  background: #cfffff;
+}
+
+.priceStatsBuy{
+  margin-top: 2rem;
+  font-size: 4rem;
+  letter-spacing: -5px;
+}

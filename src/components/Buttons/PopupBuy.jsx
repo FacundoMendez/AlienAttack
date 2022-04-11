@@ -1,7 +1,7 @@
 import React, {useContext }from 'react'
 import ButtonBuyDiseño from './buttonBuy/ButtonBuyDiseño'
 import TokenContext from '../context/TokenContext'
-import noCall from './NoCall'
+import noCash from './NoCash'
 
 
 const Popup = (props) => {
@@ -36,7 +36,7 @@ const Popup = (props) => {
                 sessionStorage.setItem("popupNavAlert", true)
 
               }else{
-                noCall()
+                noCash()
               }
 
               }}>

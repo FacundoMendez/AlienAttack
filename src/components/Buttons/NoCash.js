@@ -1,6 +1,6 @@
 import gsap from 'gsap'
 
-const noCall = () =>{
+const noCash = () =>{
     const tokenNav = document.querySelector(".contadorCoin");
     gsap.to(tokenNav,{
       color:"red",
@@ -19,4 +19,4 @@ const noCall = () =>{
     })
 }
 
-export default noCall;
+export default noCash;
