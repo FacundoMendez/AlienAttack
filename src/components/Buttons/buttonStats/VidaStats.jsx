@@ -1,10 +1,22 @@
-import React,{useState, useEffect} from 'react';
-import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
+import React,{useState,useEffect} from 'react';
 
-export default function VidaStats(props) {
 
-  const [progress, setProgress] = useState(0)
+export default function VidaStats({setConfirm,setPriceState,valorHp ,setStatHp,priceState}) {
+  console.log(valorHp)
+
+  const [progress,setProgress] = useState(priceState + valorHp)
+  useEffect(()=>{
+    setPriceState(progress*5)
+    
+    if (setConfirm){
+      setStatHp(progress)
+
+
+    }else{
+      setStatHp(valorHp)
+
+    }
+  })
 
   return (
     <div className="containerStatsBuy">
@@ -12,8 +24,9 @@ export default function VidaStats(props) {
         <input
             type="range"
             onChange={(ev) => setProgress(ev.target.value)}
-            min={props.vida} max="100"
             className="rango"
+            min={50}
+            max={100}
           />
         <p className='cantStatsPorcent'>{progress}%</p>
       </div>

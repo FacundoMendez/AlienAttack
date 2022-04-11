@@ -9,15 +9,20 @@ import character7 from "../characters/character7.png"
 import character8 from "../characters/character8.png"
 import character1 from "../characters/character9.png"
 import { FaAngleLeft, FaAngleRight  } from "react-icons/fa";
-import Popup from '../../Buttons/PopupBuy'
+import PopupBuy from '../../Buttons/PopupBuy'
 import SliderFuncional from './SliderFuncional'
 import Stats from '../../Buttons/buttonStats/Stats'
+import ButtonBuy from '../../Buttons/buttonBuy/ButtonBuy'
 
 const SliderCharacter = () => {
 
   /* state */
     const[characterId, setCharacterId]= useState(1)
-    const[popupVenta, setPopupVenta]= useState(false)
+    const[popupVenta, setPopupVenta]= useState(false) /* activa el boton de comprar */
+
+    /* valores para las stats */
+    const[statHp, setStatHp]= useState(0)
+
 
     const[characters /* , setCharacters */]= useState([
       {
@@ -106,6 +111,7 @@ const SliderCharacter = () => {
 
     useEffect(() =>{
       SliderFuncional({setCharacterId})
+      setStatHp(characters[id].vida)
     },[])  
 
 
@@ -151,7 +157,8 @@ const SliderCharacter = () => {
           <span className="button button--prev" id="prev" onClick={() => setId(characterId-1)}><b className="arrow" > <FaAngleLeft /> </b></span>
           
           <Stats 
-              
+              id={characterId} 
+              characters={characters} 
               setPopupVenta={setPopupVenta}
 
               precio={characters[characterId-1].precio}
@@ -170,20 +177,30 @@ const SliderCharacter = () => {
               consectetur doloribus eius aliquam quisquam rerum quasi cum 
               voluptas ipsam placeat veniam"
 
-              valorHp={characters[id].vida}
+
+              /* vida */
+              valorHp={statHp}
+              setStatHp={setStatHp}
+
               textHp="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
               Iste hic libero minus explicabo est nemo, soluta id culpa 
               consectetur doloribus eius aliquam quisquam rerum quasi cum 
               voluptas ipsam placeat veniam"
               titleHp="VIDA"
           />
-
-          {popupVenta ? <Popup 
+          <ButtonBuy 
+                id={characterId}
+                characters={characters}
+                setPopupVenta={setPopupVenta}
+            />
+            
+          {popupVenta ? <PopupBuy
             setPopupVenta={setPopupVenta}
             id={characterId} 
             characters={characters} 
             img={characters[characterId-1].img} 
             /> : null}
+   
       </div>
     </div>
   )
