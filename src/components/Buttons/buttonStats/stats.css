@@ -1,0 +1,79 @@
+.form {
+    margin: 0 auto;
+    padding: 100px 30px 0;
+  
+    @media (min-width: 800px) {
+      max-width: 60%;
+    }
+  }
+  
+  .input-range {
+    margin-bottom: 160px;
+  }
+  
+.containerPopupStats{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.849);
+  z-index: 100;
+  top: 0%;
+  left: 0%;
+  transform: translate(-68%, -45%);
+  z-index: 10000;
+
+}
+
+.popupStats{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.836);
+  width: 70rem;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 2px #000000, 0 0 15px #03f4d4dc, 0 0 30px #03f4e8a8, 0 0 100px #03f4e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 1.5rem ;
+  user-select: none;
+}
+
+.titlePopupStats{
+  font-size: 2rem;
+  padding: 2rem 0;
+  letter-spacing: -5px;
+}
+
+.buttonsCheckStats{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 8rem;
+  position: relative;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+
+}
+
+.configButtonStats{
+  font-size: 3rem;
+  width: 15rem;
+  background-color: rgba(0, 0, 0, 0.966);
+  color: rgb(82, 255, 203);
+  cursor: pointer;
+
+}
+
+
+
+/* slider stats buy */
+

@@ -9,9 +9,9 @@ import character7 from "../characters/character7.png"
 import character8 from "../characters/character8.png"
 import character1 from "../characters/character9.png"
 import { FaAngleLeft, FaAngleRight  } from "react-icons/fa";
-import Stats from './Stats'
-import Popup from '../../Buttons/Popup'
+import Popup from '../../Buttons/PopupBuy'
 import SliderFuncional from './SliderFuncional'
+import Stats from '../../Buttons/buttonStats/Stats'
 
 const SliderCharacter = () => {
 

@@ -5,7 +5,7 @@ import NoCards from './NoCards'
 
 const User = () => {
     let confirmacionVenta = sessionStorage.getItem("confirmacion de venta")
-
+    sessionStorage.removeItem("popupNavAlert")
     const[cards, setCards]= useState(false)
 
     useEffect(()=>{
@@ -26,7 +26,9 @@ const User = () => {
                     }else{
                         setCards(false)
                     }
-                   }} >CHARACTERS</li>
+                   }} >
+                    CHARACTERS
+                </li>
 
                 <li>TOKENS</li>
                 <li>USER NAME</li>

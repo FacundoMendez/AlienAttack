@@ -5,6 +5,8 @@ import imgCoin from "../../img/token.png"
 import navFuncional from './navFuncional';
 import navScroll from './scrollNav';
 import TokenContext from '../context/TokenContext';
+import "./nav.css"
+import PopupAlertNav from '../Buttons/PopupAlertNav';
 
 
 function Nav() {
@@ -14,7 +16,8 @@ function Nav() {
     useEffect(() => {
         navScroll();
     },[])
-    
+
+    let confirmacion = sessionStorage.getItem("popupNavAlert")
 
     return (
         <header className="header">
@@ -46,10 +49,11 @@ function Nav() {
                             </a>
                         </li>
 
-                        <li className="nav-menu-item">
+                        <li className="nav-menu-item user">
                             <a href="/user" className="nav-menu-link nav-link">
                                 User
                             </a>
+                            {confirmacion ? <PopupAlertNav/> : null}
                         </li>
 
                         <li className="nav-menu-item nav2" >

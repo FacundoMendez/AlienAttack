@@ -1,7 +1,8 @@
-import React, {useContext}from 'react'
+import React, {useContext }from 'react'
 import ButtonBuyDiseño from './buttonBuy/ButtonBuyDiseño'
 import TokenContext from '../context/TokenContext'
-import gsap from 'gsap'
+import noCall from './NoCall'
+
 
 const Popup = (props) => {
   const contextToken = useContext(TokenContext)
@@ -9,7 +10,7 @@ const Popup = (props) => {
   return (
     <div className="containerPopup">
         <div className='popupBuy'>
-          <div className="titlePopup">
+          <div className="titlePopupStats">
               <h2>Are you sure you want to buy the character?</h2>
           </div>
           <div className="buttonsCheck">
@@ -20,36 +21,22 @@ const Popup = (props) => {
                 text={"NO"} 
               />
             </div>
+
             <div className='yes' onClick={() => {
+
               const characterObj = props.characters.filter( e => e.id === props.id);
+              
               if(contextToken.token - characterObj[0].precio >= 0){
-                console.log(...characterObj);
 
                 contextToken.setToken(contextToken.token - characterObj[0].precio)
                 props.setPopupVenta(false)
 
                 sessionStorage.setItem("Imagen del producto", props.img)
-
                 sessionStorage.setItem("confirmacion de venta",true)
-
+                sessionStorage.setItem("popupNavAlert", true)
 
               }else{
-                const tokenNav = document.querySelector(".contadorCoin");
-                gsap.to(tokenNav,{
-                  color:"red",
-                  y:2,
-                  ease: "elastic.out(1, 0.3)",
-                  duration:.9,
-
-                })
-                
-               
-                gsap.to(tokenNav,{
-                  delay:1,
-                  y:0,
-                  color:"#bdffeefd",
-                  duration:1,
-                })
+                noCall()
               }
 
               }}>

@@ -1,21 +1,27 @@
-import React from 'react'
-import ButtonBuy from '../../Buttons/buttonBuy/ButtonBuy'
-
+import React,{useState} from 'react'
+import ButtonBuy from '../buttonBuy/ButtonBuy'
+import Popup from '../PopupStats'
 
 const Stats = (props) => {
+
+    const [active, setActive ] = useState(false)
+
     return (
         <div className='charactersStats'>
             <div className="precio">
                  <p className="valorPrecio">{props.precio} Atck</p>
              </div>
             <div className="stats">
-                <div className="ss hp">
+
+                <div className="ss hp" onClick={() => setActive(true)}>
                     <p className="valor">{props.valorHp}</p>
                     <div className="statsHP">
                         <h4>{props.titleHp}</h4>
                         <p>{props.textHp}</p>
                     </div>
                 </div>
+                {active ? <Popup /> : null}
+
                 <div className="ss velocidad">  
                     <p className="valor">{props.valorVelocidad}</p>
                     <div className="statsVelocidad">
@@ -23,6 +29,7 @@ const Stats = (props) => {
                         <p>{props.textVelociad}</p>
                     </div>
                 </div>
+
                 <div className="ss fuerza">
                     <p className="valor">{props.valorFuerza}</p>
                     <div className="statsFuerza">
@@ -31,13 +38,8 @@ const Stats = (props) => {
                     </div>
                 </div>
 
-             
             </div>
-            <ButtonBuy 
-                id={props.characterId} 
-                characters={props.characters} 
-                setPopupVenta={props.setPopupVenta}
-            />
+ 
         </div>
     )
 }

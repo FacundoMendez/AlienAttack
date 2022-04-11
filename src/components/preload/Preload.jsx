@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import gsap from 'gsap'
 import preloadFuncional from './preloadFuncional'
+import "./preload.css"
 
 const Preload = () => {
 
