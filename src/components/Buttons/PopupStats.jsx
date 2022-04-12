@@ -4,7 +4,7 @@ import TokenContext from '../context/TokenContext'
 import noCash from './NoCash'
 import "./buttonStats/stats.css"
 import VidaStats from './buttonStats/VidaStats'
-
+import PopupNoCharacter from './buttonBuy/PopupNoCharacter'
 
 const PopupStats = ({ setActive, valorHp, setStatHp}) => {
   const contextToken = useContext(TokenContext)
@@ -12,7 +12,7 @@ const PopupStats = ({ setActive, valorHp, setStatHp}) => {
   const [priceState, setPriceState]= useState(0)
   const [confirm, setConfirm] = useState(false)
 
-
+  
 
   return (
     <div className="containerPopupStats">
@@ -34,19 +34,20 @@ const PopupStats = ({ setActive, valorHp, setStatHp}) => {
             </div>
 
             <div className='yes' onClick={() => {
-              
-              if(contextToken.token - priceState >= 0){
+              let confirmBuyCharacter = sessionStorage.getItem("confirmacion de venta")
+              if(confirmBuyCharacter === "true"){
+                if(contextToken.token - priceState >= 0){
+                  contextToken.setToken(contextToken.token - priceState)
+                  setActive(false)
+                  setConfirm(true)
 
-                contextToken.setToken(contextToken.token - priceState)
-                setActive(false)
-                setConfirm(true)
-
+                }else{
+                  noCash()
+                }    
               }else{
-                noCash()
+                sessionStorage.setItem("NoCharacter", false)
               }
-
               }}>
-                
                 <ButtonBuyDiseño  
                   nameClass="configButtonStats" 
                   text={"YES"} 

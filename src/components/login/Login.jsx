@@ -3,7 +3,6 @@ import "./login.css"
 import LoginUser from './LoginUser';
 
 const Login = () => {
-  
 
   return (
     <div className="boxFormulario">

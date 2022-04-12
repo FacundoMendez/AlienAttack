@@ -14,6 +14,7 @@ import SliderFuncional from './SliderFuncional'
 import Stats from '../../Buttons/buttonStats/Stats'
 import ButtonBuy from '../../Buttons/buttonBuy/ButtonBuy'
 
+
 const SliderCharacter = () => {
 
   /* state */
@@ -115,6 +116,7 @@ const SliderCharacter = () => {
     },[])  
 
 
+
   const[id, setId]= useState(1)
 
   return (
@@ -150,6 +152,7 @@ const SliderCharacter = () => {
                 <img src={character9} alt="character"/>
             </div>
         </div>
+
 
 
         <div className="buttons">
