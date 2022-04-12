@@ -39,7 +39,6 @@ const PopupStats = ({id, characters, setActive, valorHp, setStatHp}) => {
                 contextToken.setToken(contextToken.token - priceState)
                 setActive(false)
                 setConfirm(true)
-                console.log(confirm)
 
               }else{
                 noCash()

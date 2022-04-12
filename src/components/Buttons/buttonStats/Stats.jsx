@@ -27,6 +27,7 @@ const Stats = (props) => {
                     characters={props.characters}
                     valorHp = {props.valorHp}
                     setStatHp={props.setStatHp}
+                   
                 /> : null}
 
                 <div className="ss velocidad" onClick={() => {

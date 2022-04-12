@@ -24,7 +24,7 @@ const SliderCharacter = () => {
     const[statHp, setStatHp]= useState(0)
 
 
-    const[characters /* , setCharacters */]= useState([
+    const[characters]= useState([
       {
         id:1,
         nombre:"",
@@ -179,7 +179,7 @@ const SliderCharacter = () => {
 
 
               /* vida */
-              valorHp={statHp}
+              valorHp={characters[id].vida}
               setStatHp={setStatHp}
 
               textHp="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 

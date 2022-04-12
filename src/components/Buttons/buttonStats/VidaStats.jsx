@@ -2,35 +2,26 @@ import React,{useState,useEffect} from 'react';
 
 
 export default function VidaStats({setConfirm,setPriceState,valorHp ,setStatHp,priceState}) {
-  console.log(valorHp)
-
-  const [progress,setProgress] = useState(priceState + valorHp)
+  const [progress,setProgress] = useState(priceState)
+  const [active,setActive] = useState(false)
   useEffect(()=>{
-    setPriceState(progress*5)
-    
-    if (setConfirm){
-      setStatHp(progress)
-
-
-    }else{
-      setStatHp(valorHp)
-
-    }
+    setStatHp(progress)
+    setPriceState(progress*10 - valorHp*10)
   })
 
   return (
     <div className="containerStatsBuy">
       <div className="barStats">
-        <input
+        <input onClick={()=> setActive(true)}
             type="range"
             onChange={(ev) => setProgress(ev.target.value)}
             className="rango"
-            min={50}
+            min={String(valorHp)}
             max={100}
           />
         <p className='cantStatsPorcent'>{progress}%</p>
       </div>
-      <p className='priceStatsBuy'>${progress*5} ATCK</p>
+      <p className='priceStatsBuy'>${active ? progress*10 - valorHp*10  : 0} ATCK</p>
     </div>
   );
 }
