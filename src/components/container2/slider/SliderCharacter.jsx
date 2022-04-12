@@ -160,7 +160,6 @@ const SliderCharacter = () => {
               id={characterId} 
               characters={characters} 
               setPopupVenta={setPopupVenta}
-
               precio={characters[characterId-1].precio}
 
               valorFuerza={characters[id].fuerza}

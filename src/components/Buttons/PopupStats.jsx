@@ -6,7 +6,7 @@ import "./buttonStats/stats.css"
 import VidaStats from './buttonStats/VidaStats'
 
 
-const PopupStats = ({id, characters, setActive, valorHp, setStatHp}) => {
+const PopupStats = ({ setActive, valorHp, setStatHp}) => {
   const contextToken = useContext(TokenContext)
 
   const [priceState, setPriceState]= useState(0)
@@ -32,6 +32,7 @@ const PopupStats = ({id, characters, setActive, valorHp, setStatHp}) => {
                 text={"NO"} 
               />
             </div>
+
             <div className='yes' onClick={() => {
               
               if(contextToken.token - priceState >= 0){

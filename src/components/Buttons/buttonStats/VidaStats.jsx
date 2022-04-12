@@ -18,7 +18,7 @@ export default function VidaStats({setConfirm,setPriceState,valorHp ,setStatHp,p
             className="rango"
             min={String(valorHp)}
             max={100}
-          />
+          onTouchStart={() => setActive(true)}/>
         <p className='cantStatsPorcent'>{progress}%</p>
       </div>
       <p className='priceStatsBuy'>${active ? progress*10 - valorHp*10  : 0} ATCK</p>
