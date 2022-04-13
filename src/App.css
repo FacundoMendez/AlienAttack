@@ -479,8 +479,8 @@ main {
   border-radius: 100rem;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.425);
-  width: 9rem;
-  height: 9rem;
+  width: 10rem;
+  height: 10rem;
   position: relative;
   cursor: pointer;
   border-style: outset;
@@ -618,7 +618,7 @@ main {
 
 .ss:hover > .valor {
   color: black;
-  font-size: 4rem;
+  font-size: 3.6rem;
   filter: drop-shadow(0 0 1px rgb(172, 255, 216)) ;
   transition: all .5s ease-in-out;
 

@@ -8,4 +8,4 @@ const PopupNoCharacter = () => {
   )
 }
 
-export default PopupNoCharacter
+export default PopupNoCharacter;

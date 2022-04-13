@@ -1,20 +1,28 @@
-import React,{useState} from 'react'
-import "./stats.css"
+import React,{useState,useEffect} from 'react';
 
-const VelocidadStats = () => {
-    const [progress, setProgress] = useState({value:5})
 
+export default function VidaStats({setPriceState,valorVelocidad ,setStatVelocidad,priceState}) {
+  const [progress,setProgress] = useState(priceState)
+  const [active,setActive] = useState(false)
+  
+  useEffect(()=>{
+    setStatVelocidad(progress)
+    setPriceState(progress*10 - valorVelocidad*10)
+  })
 
   return (
-    <form className="form">
-        <InputRange
-        maxValue={100}
-        minValue={0}
-        value={progress.value}
-        onChange={value => setProgress({ value })}
-        onChangeComplete={value => console.log(value)} />
-  </form>
-  )
+    <div className="containerStatsBuy">
+      <div className="barStats">
+        <input onClick={()=> setActive(true)}
+            type="range"
+            onChange={(ev) => setProgress(ev.target.value)}
+            className="rango"
+            min={String(valorVelocidad)}
+            max={100}
+          onTouchStart={() => setActive(true)}/>
+        <p className='cantStatsPorcent'>{progress}%</p>
+      </div>
+      <p className='priceStatsBuy'>${active ? progress*10 - valorVelocidad*10  : 0} ATCK</p>
+    </div>
+  );
 }
-
-export default VelocidadStats

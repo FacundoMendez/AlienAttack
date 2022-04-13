@@ -1,13 +1,14 @@
 import React,{useState,useEffect} from 'react';
 
 
-export default function VidaStats({setConfirm,setPriceState,valorHp ,setStatHp,priceState}) {
+export default function VidaStats({setPriceState,valorFuerza ,setStatFuerza,priceState}) {
+
   const [progress,setProgress] = useState(priceState)
   const [active,setActive] = useState(false)
   
   useEffect(()=>{
-    setStatHp(progress)
-    setPriceState(progress*10 - valorHp*10)
+    setStatFuerza(progress)
+    setPriceState(progress*10 - valorFuerza*10)
   })
 
   return (
@@ -17,12 +18,12 @@ export default function VidaStats({setConfirm,setPriceState,valorHp ,setStatHp,p
             type="range"
             onChange={(ev) => setProgress(ev.target.value)}
             className="rango"
-            min={String(valorHp)}
+            min={String(valorFuerza)}
             max={100}
           onTouchStart={() => setActive(true)}/>
         <p className='cantStatsPorcent'>{progress}%</p>
       </div>
-      <p className='priceStatsBuy'>${active ? progress*10 - valorHp*10  : 0} ATCK</p>
+      <p className='priceStatsBuy'>${active ? progress*10 - valorFuerza*10  : 0} ATCK</p>
     </div>
   );
 }

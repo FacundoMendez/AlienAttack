@@ -6,7 +6,6 @@ import EffectMovie from '../container/EffectMovie';
 import Preload from '../preload/Preload';
 
 
-
 function Home() {
 
   useEffect(() => {
