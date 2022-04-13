@@ -47,7 +47,7 @@ const Stats = (props) => {
                     id={props.id}
                     characters={props.characters}
                     valorVelocidad = {props.valorVelocidad}
-                    setStatVelocidad={props.setStatVelociadad}
+                    setStatVelocidad={props.setStatVelocidad}
                 /> : null}
 
 
