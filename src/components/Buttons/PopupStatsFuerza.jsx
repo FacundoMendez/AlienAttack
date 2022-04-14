@@ -6,7 +6,7 @@ import "./buttonStats/stats.css"
 import FuerzaStats from './buttonStats/FuerzaStats'
 import PopupNoCharacters from "./buttonBuy/PopupNoCharacter"
 
-const PopupStats = ({ setActive, valorFuerza, setStatFuerza}) => {
+const PopupStats = ({ setActive, valorFuerza, setActivePopupStats}) => {
   const contextToken = useContext(TokenContext)
 
   const [priceState, setPriceState]= useState(0)
@@ -29,19 +29,22 @@ const PopupStats = ({ setActive, valorFuerza, setStatFuerza}) => {
             setConfirm={setConfirm}
             priceState={priceState}
             valorFuerza={valorFuerza}
-            setStatFuerza={setStatFuerza}
             setPriceState={setPriceState}
+            confirm={confirm}
           />
 
           <div className="buttonsCheckStats">
-            <div className="no" onClick={() => setActive(false)}>
+            <div className="no" onClick={() => {
+              setActive(false)
+              setActivePopupStats(false)
+              }}>
               <ButtonBuyDiseño nameClass="configButtonStats" text={"NO"} />
             </div>
 
             <div
               className="yes" onClick={() => {
                 let confirmBuyCharacter = sessionStorage.getItem("confirmacion de venta");
-
+                setActivePopupStats(false)
                 if (confirmBuyCharacter === "true") {
                   setNoCharacter(false)
                   if (contextToken.token - priceState >= 0) {

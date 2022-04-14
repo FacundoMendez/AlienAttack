@@ -17,14 +17,17 @@ import ButtonBuy from '../../Buttons/buttonBuy/ButtonBuy';
 
 const SliderCharacter = () => {
 
+  useEffect(() =>{
+    SliderFuncional({setCharacterId})
+  },[])  
+
   /* state */
     const[characterId, setCharacterId]= useState(1)
     const[popupVenta, setPopupVenta]= useState(false) /* activa el boton de comprar */
-
+    const[id, setId]= useState(1)
     /* valores para las stats */
-    const[statHp, setStatHp]= useState(0)
-    const[statFuerza, setStatFuerza]= useState(0)
-    const[statVelocidad, setStatVelocidad]= useState(0)
+
+    const[activePopupStats, setActivePopupStats] = useState(false)
 
     const[characters]= useState([
       {
@@ -112,14 +115,7 @@ const SliderCharacter = () => {
     ])
 
 
-    useEffect(() =>{
-      SliderFuncional({setCharacterId})
-      setStatHp(characters[id].vida)
-    },[])  
 
-
-
-  const[id, setId]= useState(1)
 
   return (
     <div className="wrapper">
@@ -162,7 +158,7 @@ const SliderCharacter = () => {
           onClick={() => setId(characterId - 1)}
         >
 
-          <b className="arrow">
+          <b className="arrow">            
             <FaAngleRight />
           </b>
 
@@ -187,12 +183,12 @@ const SliderCharacter = () => {
 
           precio={characters[characterId - 1].precio}
 
+          setActivePopupStats={setActivePopupStats}
 
           /* fuerza */
 
-          valorFuerza={characters[id].fuerza}
+          valorFuerza={characters[characterId -1].fuerza}
           
-          setStatFuerza={setStatFuerza}
 
           titleFuerza="FUERZA"
 
@@ -204,9 +200,8 @@ const SliderCharacter = () => {
 
           /* velocidad */
 
-          valorVelocidad={characters[id].velocidad}
+          valorVelocidad={characters[characterId -1].velocidad}
 
-          setStatVelocidad={setStatVelocidad}
 
           titleVelocidad="VELOCIDAD"
 
@@ -219,9 +214,8 @@ const SliderCharacter = () => {
 
           /* vida */
 
-          valorHp={characters[id].vida}
+          valorHp={characters[characterId -1].vida}
 
-          setStatHp={setStatHp}
 
           textHp="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                 Iste hic libero minus explicabo est nemo, soluta id culpa 
@@ -230,20 +224,21 @@ const SliderCharacter = () => {
 
           titleHp="VIDA"
         />
-        <ButtonBuy
+        
+        
+        {!activePopupStats ? <ButtonBuy
           id={characterId}
           characters={characters}
           setPopupVenta={setPopupVenta}
-        />
+        /> : null}
 
-        {popupVenta ? (
-          <PopupBuy
+
+        {popupVenta ? <PopupBuy
             setPopupVenta={setPopupVenta}
             id={characterId}
             characters={characters}
             img={characters[characterId - 1].img}
-          />
-        ) : null}
+          /> : null}
       </div>
     </div>
   );

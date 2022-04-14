@@ -12,16 +12,15 @@
   }
   
 .containerPopupStats{
-  position: absolute;
+  position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 101vh;
   background-color: rgba(0, 0, 0, 0.849);
   z-index: 100;
-  top: 0%;
-  left: 0%;
-  transform: translate(-68%, -45%);
+  top: -8rem;
+  left: 26%;
+  transform: translate(-50%, -50%);
   z-index: 10000;
-
 }
 
 .popupStats{
@@ -29,8 +28,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.836);
-  width: 70rem;
+  background-color: rgba(0, 0, 0, 0.918);
+  width: 65rem;
+  z-index: 5000;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 0 2px #000000, 0 0 15px #03f4d4dc, 0 0 30px #03f4e8a8, 0 0 100px #03f4e0;
@@ -38,8 +38,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 6rem;
-  padding: 1.5rem ;
+  gap: 3rem;
+  padding: 1.5rem;
   user-select: none;
 }
 
@@ -58,18 +58,19 @@
   width: 100%;
   gap: 8rem;
   position: relative;
-  bottom: 1rem;
+  bottom: 0rem;
   left: 50%;
   transform: translate(-50%);
-
 }
 
-.configButtonStats{
+.configButtonStats p{ 
+  margin-top: 2rem;
   font-size: 3rem;
   width: 15rem;
   background-color: rgba(0, 0, 0, 0.966);
   color: rgb(82, 255, 203);
   cursor: pointer;
+  
 
 }
 

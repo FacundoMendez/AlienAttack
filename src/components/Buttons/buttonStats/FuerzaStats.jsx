@@ -1,13 +1,12 @@
 import React,{useState,useEffect} from 'react';
 
 
-export default function VidaStats({setPriceState,valorFuerza ,setStatFuerza,priceState}) {
+export default function VidaStats({setPriceState,valorFuerza ,priceState}) {
 
   const [progress,setProgress] = useState(priceState)
   const [active,setActive] = useState(false)
   
   useEffect(()=>{
-    setStatFuerza(progress)
     setPriceState(progress*10 - valorFuerza*10)
   })
 

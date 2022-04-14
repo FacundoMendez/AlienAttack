@@ -4,6 +4,7 @@ import PopupVelocidad from '../PopupStatsVelocidad'
 import PopupFuerza from '../PopupStatsFuerza'
 
 
+
 const Stats = (props) => {
 
     const [active, setActive ] = useState(false)
@@ -17,6 +18,7 @@ const Stats = (props) => {
 
                 <div className="ss hp" onClick={() => {
                     setActive(true)
+                    props.setActivePopupStats(true)
                     }}>
                     <p className="valor">{props.valorHp}%</p>
                     <div className="statsHP">
@@ -29,11 +31,13 @@ const Stats = (props) => {
                     id={props.id}
                     characters={props.characters}
                     valorHp = {props.valorHp}
-                    setStatHp={props.setStatHp}
+                    setActivePopupStats={props.setActivePopupStats}
                 /> : null}
+            
 
                 <div className="ss velocidad" onClick={() => {
                     setActive(true)
+                    props.setActivePopupStats(true)
                     }}>  
                     <p className="valor">{props.valorVelocidad}%</p>
                     <div className="statsVelocidad">
@@ -47,12 +51,13 @@ const Stats = (props) => {
                     id={props.id}
                     characters={props.characters}
                     valorVelocidad = {props.valorVelocidad}
-                    setStatVelocidad={props.setStatVelocidad}
+                    setActivePopupStats={props.setActivePopupStats}
                 /> : null}
 
 
                 <div className="ss fuerza" onClick={() => {
                     setActive(true)
+                    props.setActivePopupStats(true)
                     }}>
                     <p className="valor">{props.valorFuerza}%</p>
                     <div className="statsFuerza">
@@ -66,12 +71,10 @@ const Stats = (props) => {
                     id={props.id}
                     characters={props.characters}
                     valorFuerza = {props.valorFuerza}
-                    setStatFuerza={props.setStatFuerza}
+                    setActivePopupStats={props.setActivePopupStats}
                 /> : null}
 
-
             </div>
-  
         </div>
     )
 }
