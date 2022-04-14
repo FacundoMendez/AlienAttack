@@ -474,7 +474,6 @@ main {
 
 .ss{
   border: 5px groove #ddfff6f5;
-  box-shadow: 0 0 .6rem rgb(0, 255, 221);
   filter: drop-shadow(0 0 8px rgb(0, 0, 0)) ;
   border-radius: 100rem;
   padding: 1rem;
@@ -485,6 +484,9 @@ main {
   cursor: pointer;
   border-style: outset;
   transition: all .5s ease-in-out;
+  animation: statsAnimate 4s linear infinite;
+  box-shadow: 0 0 1rem rgb(0, 255, 221);
+
 }
 
 .valor{
@@ -519,6 +521,7 @@ main {
   width: 12rem;
   text-align: center;
   transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px #03e8f4cc, 0 0 20px #03f4d4da, 0 0 40px #03f4e8c7, 0 0 100px #03f4e041;
 }
 
 
@@ -569,6 +572,7 @@ main {
   background-color: rgba(0, 0, 0, 0.815);
   display: none;
   transition: all .5s ease-in-out;
+
 }
 
 .statsHP p{
@@ -641,6 +645,7 @@ main {
   background-color: rgba(0, 0, 0, 0.815);
   display: none;
   transition: all .5s ease-in-out;
+
 }
 
 .statsVelocidad p, .statsFuerza p{
@@ -696,6 +701,25 @@ main {
 
 
 
+
+@keyframes statsAnimate {
+  0%{
+  box-shadow:none;
+
+  }
+
+  50%{
+    box-shadow: 0 0 5px #03e9f4, 0 0 15px #03f4d4, 0 0 30px #03f4e8, 0 0 100px #03f4e0;
+
+  }
+
+  100%{
+    box-shadow: none;
+  }
+}
+
+
+
 /* BUTTON BUY */
 .buttonBuyContainer{
   position: relative;
@@ -703,6 +727,7 @@ main {
   height: 10rem;
   top: 40.5rem;
   z-index: 100;
+  
 }
 
 .buy{
