@@ -473,7 +473,7 @@ main {
 }
 
 .ss{
-  border: 5px groove #ddfff6f5;
+  border: 3px outset #979797;
   filter: drop-shadow(0 0 8px rgb(0, 0, 0)) ;
   border-radius: 100rem;
   padding: 1rem;
@@ -482,7 +482,6 @@ main {
   height: 10rem;
   position: relative;
   cursor: pointer;
-  border-style: outset;
   transition: all .5s ease-in-out;
   animation: statsAnimate 4s linear infinite;
   box-shadow: 0 0 1rem rgb(0, 255, 221);
@@ -710,7 +709,7 @@ main {
 
   50%{
     box-shadow: 0 0 5px #03e9f4, 0 0 15px #03f4d4, 0 0 30px #03f4e8, 0 0 100px #03f4e0;
-
+    border: 3px outset #fffdfd;
   }
 
   100%{
