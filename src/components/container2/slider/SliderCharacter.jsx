@@ -12,9 +12,10 @@ const SliderCharacter = () => {
 
   const[characters, setCharacters]= useState([{}])
   const[loading, setLoading] = useState(false)
+  const[characterId, setCharacterId]= useState(1)
 
   useEffect(() =>{
-    /* */
+        /* */
 
     /* armar la referencia de la base de datos */
     
@@ -27,17 +28,18 @@ const SliderCharacter = () => {
         const items = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
         console.log(items)
         setCharacters(items)
+
       }).finally(() => {
         setLoading(true)
         SliderFuncional({setCharacterId})
+
       })
       
-
   },[])  
 
 
+
   /* state */
-    const[characterId, setCharacterId]= useState(1)
     const[popupVenta, setPopupVenta]= useState(false) /* activa el boton de comprar */
     const[id, setId]= useState(1)
     /* valores para las stats */
@@ -67,20 +69,18 @@ const SliderCharacter = () => {
               <img src={characters[4].img} alt="character4" />
             </div>
             <div id="5" className="slide character5">
-              <img src={characters[5].img} alt="character5" />
+              <img src={characters[0].img} alt="character5" />
             </div>
             <div id="6" className="slide character6">
-              <img src={characters[6].img} alt="character6" />
+              <img src={characters[5].img} alt="character6" />
             </div>
             <div id="7" className="slide character7">
-              <img src={characters[7].img} alt="character7" />
+              <img src={characters[8].img} alt="character7" />
             </div>
             <div id="8" className="slide character8">
-              <img src={characters[8].img} alt="character8" />
+              <img src={characters[6].img} alt="character8" />
             </div>
-            <div id="9" className="slide character9">
-              <img src={characters[0].img} alt="character9" />
-            </div>
+     
           </div>
 
           <div className="buttons">

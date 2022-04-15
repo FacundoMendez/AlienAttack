@@ -428,12 +428,6 @@ main {
   margin-left: 1rem;
 }
 .character8 img{
-  width: 36.5vw;
-  margin-top: 23rem;
-  filter: drop-shadow(8px 0px 3px rgba(14, 14, 14, 0.726)) contrast(115%) brightness(115%);
-  margin-left: -2rem;
-}
-.character9 img{
   width: 29vw;
   margin-top: 22rem;
   filter:drop-shadow(-8px 0px 8px rgb(0, 0, 0)) contrast(112%) brightness(105%);
