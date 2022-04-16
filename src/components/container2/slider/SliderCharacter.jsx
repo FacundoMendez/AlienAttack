@@ -57,28 +57,28 @@ const SliderCharacter = () => {
 
           <div className="slider">
             <div id="1" className="character1 slide  ">
-              <img src={characters[1].img} alt="character1" />
+              <img src={characters[0].img} alt="character1" />
             </div>
             <div id="2" className="slide character2">
-              <img src={characters[2].img} alt="character2" />
+              <img src={characters[1].img} alt="character2" />
             </div>
             <div id="3" className="slide character3">
-              <img src={characters[3].img} alt="character3" />
+              <img src={characters[2].img} alt="character3" />
             </div>
             <div id="4" className="slide character4">
-              <img src={characters[4].img} alt="character4" />
+              <img src={characters[3].img} alt="character4" />
             </div>
             <div id="5" className="slide character5">
-              <img src={characters[0].img} alt="character5" />
+              <img src={characters[4].img} alt="character5" />
             </div>
             <div id="6" className="slide character6">
               <img src={characters[5].img} alt="character6" />
             </div>
             <div id="7" className="slide character7">
-              <img src={characters[8].img} alt="character7" />
+              <img src={characters[6].img} alt="character7" />
             </div>
             <div id="8" className="slide character8">
-              <img src={characters[6].img} alt="character8" />
+              <img src={characters[7].img} alt="character8" />
             </div>
      
           </div>
@@ -88,7 +88,7 @@ const SliderCharacter = () => {
               className="button button--next"
               id="next"
               onClick={() => {
-                setId(characters[characterId].id)
+                setId(characters[characterId ].id)
               }}
             
             >
@@ -110,19 +110,19 @@ const SliderCharacter = () => {
             </span>
 
             <Stats
-              id={characters[characterId].id}
+              id={characters[characterId -1].id}
 
               characters={characters}
 
               setPopupVenta={setPopupVenta}
 
-              precio={characters[characterId].precio}
+              precio={characters[characterId -1].precio}
 
               setActivePopupStats={setActivePopupStats}
 
               /* fuerza */
 
-              valorFuerza={characters[characterId].fuerza}
+              valorFuerza={characters[characterId -1].fuerza}
               
 
               titleFuerza="FUERZA"
@@ -135,7 +135,7 @@ const SliderCharacter = () => {
 
               /* velocidad */
 
-              valorVelocidad={characters[characterId].velocidad}
+              valorVelocidad={characters[characterId -1].velocidad}
 
 
               titleVelocidad="VELOCIDAD"
@@ -149,7 +149,7 @@ const SliderCharacter = () => {
 
               /* vida */
 
-              valorHp={characters[characterId].vida}
+              valorHp={characters[characterId -1].vida}
 
 
               textHp="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
@@ -162,7 +162,7 @@ const SliderCharacter = () => {
             
             
             {!activePopupStats ? <ButtonBuy
-              id={characters[characterId].id}
+              id={characters[characterId -1].id}
               characters={characters}
               setPopupVenta={setPopupVenta}
             /> : null}
@@ -170,9 +170,10 @@ const SliderCharacter = () => {
 
             {popupVenta ? <PopupBuy
                 setPopupVenta={setPopupVenta}
-                id={characters[characterId].id}
+                class={characters[characterId -1].nombre}
+                id={characters[characterId -1].id}
                 characters={characters}
-                img={characters[characterId].img}
+                img={characters[characterId -1].img}
               /> : null}
           </div>
         </div>

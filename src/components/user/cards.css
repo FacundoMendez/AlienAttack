@@ -14,9 +14,9 @@
 
   
   .card {
-    background: rgba(8, 8, 8, 0.952);
+    background: rgb(0, 0, 0);
     width: 30rem;
-    height: 40rem;
+    height: 45rem;
     padding: 3px;
     position: relative;
     border-radius: 6px;
@@ -24,10 +24,8 @@
     align-items: center;
     text-align: center;
     display: flex;
-    font-size: 1.5em;
-    color: rgb(88 199 250 / 0%);
+    color: rgb(131, 241, 255);
     cursor: pointer;
-    font-family: cursive;
     left: 10%;
     top: 10%;
   }
@@ -37,10 +35,10 @@
     content: "";
     width: 104%;
     height: 102%;
-    border-radius: 8px;
+    border-radius: 5px;
     background-image: linear-gradient(
       var(--rotate)
-      , #5ddcff, #82fff5 43%, #00c298);
+      , #5ddcff, #82fff5 43%, #00abc2);
       position: absolute;
       z-index: -1;
       top: -1%;
@@ -54,6 +52,7 @@
     top: calc(50rem / 6);
     left: 0;
     right: 0;
+    top: 0;
     z-index: -1;
     height: 100%;
     width: 100%;
@@ -62,7 +61,7 @@
     filter: blur(calc(50rem / 6));
     background-image: linear-gradient(
       var(--rotate)
-      , #9fffe771, #82fff583 43%, #02eeff4d);
+      , #9fffe733, #82fff550 50%, #02f7ffa2);
       opacity: 1;
     transition: opacity .5s;
     animation: spin 2.5s linear infinite;
@@ -79,10 +78,52 @@
   
 .cardImg{
   width: 100%;
-  
+  filter: drop-shadow(0 0 50px rgba(131, 255, 255, 0.808)) contrast(115%) brightness(105%);
 }
 
 .cardImg img{
-  object-fit: conver;
+  object-fit: cover;
   width: 100%;
+}
+
+.A-1{
+  width: 100%;
+}
+
+.A-2{
+  width: 100%;
+  height: 35rem;
+}
+
+.A-3{
+  width: 100%;
+  height: 35rem;
+  margin-left: .7rem;
+}
+
+.A-4{
+  width: 100%;
+  height: 38rem;
+  margin-left: -.6rem;
+}
+
+.A-5{
+  width: 100%;
+  height: 38rem;
+}
+
+.A-6{
+  width: 22rem !important;
+  height: 100% ;
+  margin-left: 1.7rem;
+}
+
+.A-7{
+  width: 100%;
+  height: 37rem;
+}
+
+.A-8{
+  width: 29.5rem!important;
+  height: 39rem;
 }

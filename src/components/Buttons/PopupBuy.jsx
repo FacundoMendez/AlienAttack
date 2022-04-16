@@ -32,6 +32,7 @@ const Popup = (props) => {
                 props.setPopupVenta(false)
 
                 sessionStorage.setItem("Imagen del producto", props.img)
+                sessionStorage.setItem("clase de imagen", props.class)
                 sessionStorage.setItem("confirmacion de venta",true)
                 sessionStorage.setItem("popupNavAlert", true)
 
