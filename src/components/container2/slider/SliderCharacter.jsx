@@ -6,6 +6,7 @@ import Stats from '../../Buttons/buttonStats/Stats'
 import ButtonBuy from '../../Buttons/buttonBuy/ButtonBuy';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase/config';  
+import Loader from '../../loader/Loader';
 
 
 const SliderCharacter = () => {
@@ -177,7 +178,7 @@ const SliderCharacter = () => {
               /> : null}
           </div>
         </div>
-    :null
+    : <Loader />
     } 
   </>
   );

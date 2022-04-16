@@ -220,3 +220,70 @@ box-shadow: 0 0 2rem rgb(0, 255, 200);
         text-shadow: none;
     }
 }
+
+
+
+@media (max-width: 1082px){
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    background-size: cover;
+    position: fixed;
+    top: -.9rem;
+    width: 100%;
+    padding: 0px 0;
+    height: 100vh;
+    right: 100%;
+    overflow-y: auto;
+    transition: right 0.5s;
+    filter:contrast(105%);
+    background-color: #000000;
+  }
+  
+  .nav-menu_visible {
+    right: 0%;
+  }
+
+  .nav-menu-item {
+    line-height: 80px;          
+  }
+  .nav-menu-item a{
+    font-size: 3.5rem;
+  }
+  .nav-menu-item a{
+    color: #7dd18b;
+    background-color: #0000003d;
+    box-shadow: 0 0 .5rem rgba(179, 255, 179, 0.486);
+    border: none;
+    transition: all .4s ease-in-out;
+}
+
+  .nav-menu-link:hover,
+  .nav-menu-link_active {
+    background: none;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-top: 1rem;
+    color: #7dd18b;
+    background-color: #0000003d;
+    box-shadow: 0 0 .5rem rgba(179, 255, 179, 0.486);
+    border: none;
+    transition: all .4s ease-in-out;
+  }
+
+  .nav-toggle:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  .fa-bars{
+    color: rgb(250, 238, 215);
+    font-size: 3.9rem;
+  }
+
+}
