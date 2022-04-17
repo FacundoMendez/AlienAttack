@@ -6,7 +6,10 @@ import NoCards from './NoCards'
 const User = () => {
     let confirmacionVenta = sessionStorage.getItem("confirmacion de venta")
     sessionStorage.removeItem("popupNavAlert")
+    sessionStorage.setItem("login", true )
+
     const[cards, setCards]= useState(false)
+
 
     useEffect(()=>{
         let confirmacionVenta = sessionStorage.getItem("confirmacion de venta")
@@ -14,6 +17,9 @@ const User = () => {
             setCards(true)
         }
     },[])
+
+
+    
 
   return (
     <div className='tableUser'>

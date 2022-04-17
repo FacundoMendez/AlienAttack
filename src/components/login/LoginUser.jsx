@@ -7,7 +7,7 @@ const LoginUser = () => {
         <Link className='singIn' to="/User" >
             <button id="button" onClick={()=>{
                 localStorage.setItem("usuarioActivo", true);
-            }}>Sing In</button>
+            }} type="submit">Sing In</button>
 
         </Link>
     )

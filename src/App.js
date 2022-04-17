@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
+import {BrowserRouter, Route, Routes ,Navigate} from "react-router-dom";
 import Home from './components/home/Home';
 import Nav from "./components/nav/Nav";
 import User from './components/user/User';
@@ -14,19 +14,21 @@ function App() {
   const [confirmationBuy, setConfirmationBuy] = useState(false)
 
 
+
+
   return (
-    <BrowserRouter>
-      <TokenContext.Provider value={{token, setToken, confirmationBuy, setConfirmationBuy}} >
-        <Nav />
+    <BrowserRouter  forceRefresh={true}>
+        <TokenContext.Provider value={{token, setToken, confirmationBuy, setConfirmationBuy}} >
+          <Nav />
 
-        <Routes >
-          <Route path='/user' element={<User />}/>
-          <Route path='/login' element={<Login />}/>
-          <Route path='/' element={<Home />}/>
-          <Route path='*' element={<Navigate to="/" />}/>
-        </Routes>
+          <Routes >
+            <Route path='/user' render= {()=>window.location.reload()}  element={<User /> } />
+            <Route path='/login' element={<Login />}/>
+            <Route path='/' element={<Home />}/>
+            <Route path='*' element={<Navigate to="/" />}/>
+          </Routes>
 
-      </TokenContext.Provider>
+        </TokenContext.Provider>
     </BrowserRouter>
   )
 }
