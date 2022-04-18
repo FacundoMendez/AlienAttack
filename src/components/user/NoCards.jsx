@@ -1,10 +1,7 @@
-import React,{useEffect,useState} from 'react'
-import Loader from '../loader/Loader'
+import React from 'react'
 
 const NoCards = () => {
 
-  const [active, setActive] = useState(false)
-  
 
   return (
     <>

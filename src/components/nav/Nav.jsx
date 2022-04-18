@@ -18,7 +18,6 @@ function Nav() {
     },[])
 
     let confirmacion = sessionStorage.getItem("popupNavAlert")
-    let login = sessionStorage.getItem("login")
 
     return (
         <header className="header">
@@ -44,21 +43,19 @@ function Nav() {
                             </a>
                         </li>
 
-                        <li className="nav-menu-item">
-                            <a href="/login" className="nav-menu-link nav-link">
-                                Login
-                            </a>
-                        </li>
-                        {
-                            login === "true" ? 
+                        
+                            <li className="nav-menu-item">
+                                <a href="/login" className="nav-menu-link nav-link">
+                                    Login
+                                </a>
+                            </li>
+
                             <li className="nav-menu-item user">
                                 <a href="/user" className="nav-menu-link nav-link">
                                     User
                                 </a>
                                 {confirmacion ? <PopupAlertNav/> : null}
                             </li>
-                            : null
-                        }
 
                         <li className="nav-menu-item nav2" >
                             <div className='containerCoin'>

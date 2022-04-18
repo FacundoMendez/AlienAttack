@@ -8,7 +8,6 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase/config';  
 import Loader from '../../loader/Loader';
 
-
 const SliderCharacter = () => {
 
   const[characters, setCharacters]= useState([{}])
@@ -27,7 +26,6 @@ const SliderCharacter = () => {
     getDocs(charactersRef)
       .then(resp => {
         const items = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
-        console.log(items)
         setCharacters(items)
 
       }).finally(() => {
@@ -46,7 +44,6 @@ const SliderCharacter = () => {
     /* valores para las stats */
 
     const[activePopupStats, setActivePopupStats] = useState(false)
-
 
 
   return (
@@ -168,8 +165,7 @@ const SliderCharacter = () => {
               setPopupVenta={setPopupVenta}
             /> : null}
 
-
-            {popupVenta ? <PopupBuy
+            { popupVenta ? <PopupBuy
                 setPopupVenta={setPopupVenta}
                 class={characters[characterId -1].nombre}
                 id={characters[characterId -1].id}

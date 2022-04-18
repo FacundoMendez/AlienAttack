@@ -14,15 +14,13 @@ function App() {
   const [confirmationBuy, setConfirmationBuy] = useState(false)
 
 
-
-
   return (
     <BrowserRouter  forceRefresh={true}>
         <TokenContext.Provider value={{token, setToken, confirmationBuy, setConfirmationBuy}} >
           <Nav />
 
           <Routes >
-            <Route path='/user' render= {()=>window.location.reload()}  element={<User /> } />
+            <Route path='/user'  element={<User /> } />
             <Route path='/login' element={<Login />}/>
             <Route path='/' element={<Home />}/>
             <Route path='*' element={<Navigate to="/" />}/>

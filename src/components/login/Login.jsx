@@ -7,17 +7,20 @@ import { Navigate} from 'react-router-dom'
 const Login = () => {
 
 const [active, setActive] = useState(false)
+const login =  sessionStorage.getItem("id")
+
 
 
   const [values, setValues] = useState({
     email:" ",
     password:" ",
-    fyh: Timestamp.fromDate(new Date())
+    fyh: Timestamp.fromDate(new Date()),
   })
 
 
   const submit = (e) =>{
     e.preventDefault()
+
     const user = {
       usuarioRegistrado:{...values}
     }
@@ -26,9 +29,9 @@ const [active, setActive] = useState(false)
 
     addDoc(usersRegister, user )
       .then((doc) => {
-        console.log(doc.id)
+        sessionStorage.setItem("id", doc.id)
       })
-  
+
       setActive(true)
     }
 
@@ -40,10 +43,15 @@ const [active, setActive] = useState(false)
   }
 
 
+  const SignIn = () =>{
+    return <Navigate to= "/user"/>
+}
+
   if (active){
     sessionStorage.setItem("email", values.email)
     sessionStorage.setItem("password", values.password)
-    return <Navigate to= "/user"/>
+    sessionStorage.setItem("login", true)
+    return SignIn()
   }
 
 
@@ -87,6 +95,7 @@ const [active, setActive] = useState(false)
                   <button 
                     className='singIn' 
                     type="submit"
+                    name= "id"
                      > Sing In </button>
                 </div>
 
