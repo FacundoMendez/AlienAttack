@@ -26,12 +26,10 @@ const login =  sessionStorage.getItem("id")
     }
 
     const usersRegister = collection(db,"Users")
-
     addDoc(usersRegister, user )
       .then((doc) => {
         sessionStorage.setItem("id", doc.id)
       })
-
       setActive(true)
     }
 
@@ -48,8 +46,6 @@ const login =  sessionStorage.getItem("id")
 }
 
   if (active){
-    sessionStorage.setItem("email", values.email)
-    sessionStorage.setItem("password", values.password)
     sessionStorage.setItem("login", true)
     return SignIn()
   }
@@ -85,8 +81,10 @@ const login =  sessionStorage.getItem("id")
                     placeholder="* * * * * " 
                     value={values.password} 
                     name="password"
-                    onChange={handleInputs} 
                     required 
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Password must be 8 characters including 1 uppercase letter, 1 lowercase letter and numeric characters"
+                    onChange={handleInputs} 
                   />
                 </div>
 

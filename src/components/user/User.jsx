@@ -3,6 +3,8 @@ import "./User.css"
 import Cards from './Cards'
 import NoCards from './NoCards'
 import { Navigate} from 'react-router-dom'
+import { db } from '../firebase/config'
+import { collection, getDocs} from 'firebase/firestore'
 
 
 const User = () => {
@@ -15,6 +17,14 @@ const User = () => {
 
 
     const[cards, setCards]= useState(false)
+    const[email, setEmail]= useState(" ")
+    const[password, setPassword]= useState(" ")
+    const[id, setId]= useState(" ")
+
+
+    const[activePassword, setActivePassword]= useState(false)
+    const[activeEmail, setActiveEmail]= useState(false)
+    const[activeHistory, setActiveHistory]= useState(false)
 
     const Signoff = () =>{
         sessionStorage.setItem("login", false)
@@ -27,6 +37,23 @@ const User = () => {
         if(confirmacionVenta === "true"){
             setCards(true)
         }
+    
+        const usersRef = collection(db, "Users");
+
+        /* llamar (async) esa referencia */
+
+    
+        getDocs(usersRef)
+          .then(resp => {
+            const items = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+            let userId = items.filter(u => u.id == idSession )
+            setId(userId)
+            setPassword(userId[0].usuarioRegistrado.password)
+            setEmail(userId[0].usuarioRegistrado.email)
+          })
+
+
+
 
 
     },[])
@@ -48,24 +75,24 @@ const User = () => {
                         CHARACTERS
                     </li>
 
-                    <li>TOKENS</li>
-                    <li>EMAIL</li>
-                    <li>PASSWORD</li>
-                    <li>HISTORY</li>
+                    <li onClick={() => setActiveEmail(true)}>EMAIL</li>
+
+                    <li onClick={() => setActivePassword(true)}>PASSWORD</li>
+
+                    <li onClick={() => setActiveHistory(true)}>HISTORY</li>
+
                     <li onClick={()=> {
                         Signoff()
-
                         if (login === "false"){
                             <Navigate to= "/login" />
-                        }else{
-                            console.log("e")
                         }
-                    
                     }}>Sign off</li>
+
                 </ul>
             </div>
             <div className='containerView'>
                 {cards ? <Cards/> : <NoCards /> } 
+
             </div>
         </div>
         : <Navigate to= "/login"/>
