@@ -5,7 +5,6 @@
 }
 
 
-
 .tableUser{
     position:relative;
     width: 100%;
@@ -19,13 +18,31 @@
 
 .containerList{
     width: 35rem;
-    height: 85.1vh;
-    top: 49.06%;
+    height: 90vh;
+    top: 50%;
     transform: translate(0, -50%);
     border: .5px solid rgb(165, 250, 243);
     position: relative;
     z-index: 10;
 }
+
+.singOff{
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%);
+    border: .5px solid rgb(121, 255, 244);
+    cursor: pointer;
+}
+
+.singOff P{
+    text-align: center;
+    color: white;
+    font-size: 3.2rem;
+    padding: .5rem;
+}
+
 
 
 .listUser{
@@ -33,7 +50,7 @@
     font-size: 3.5rem;
     list-style: none;
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%);
     display: flex;
@@ -63,8 +80,8 @@
 
 .containerView{
     width: 81.8vw;
-    height: 85vh;
-    top: 6.5%;
+    height: 90vh;
+    top: 5%;
     border: .5px solid rgb(165, 250, 243);
     position: relative;
     z-index: 1;
@@ -72,6 +89,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
@@ -85,3 +103,34 @@
     font-size: 5rem;
     transform: translate(-50%, -50%);
   }
+
+
+
+         /* cuenta (password email) */
+
+  .bill{
+      position: relative;
+      top: 3%;
+      left: 3%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      row-gap: 1rem;
+  }
+  
+  .emailUser p{
+    font-size: 3rem;
+    letter-spacing: -5px;
+    color: white;
+
+  }
+  
+  .passwordUser p{
+    font-size: 3rem;
+    letter-spacing: -6px;
+    color: white;
+    text-transform: none !important;
+
+  }
+  

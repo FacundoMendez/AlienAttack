@@ -8,7 +8,6 @@ import { collection, getDocs} from 'firebase/firestore'
 import EmailUser from './Email'
 
 
-
 const User = () => {
     sessionStorage.removeItem("popupNavAlert")
     let confirmacionVenta = sessionStorage.getItem("confirmacion de venta")
@@ -84,27 +83,29 @@ const User = () => {
 
                     <li onClick={() => {
                         setActiveEmail(true)
+                        setActivePassword(true)
                         setCards(false)
 
-                        }}>EMAIL</li>
+                        }}>Bill</li>
 
-                    <li onClick={() => setActivePassword(true)}>PASSWORD</li>
+     {/*                <li onClick={() => setActivePassword(true)}>PASSWORD</li> */}
 
                     <li onClick={() => setActiveHistory(true)}>HISTORY</li>
 
-                    <li onClick={()=> {
-                        Signoff()
-                        if (login === "false"){
-                            <Navigate to= "/login" />
-                        }
-                    }}>Sign off</li>
-
                 </ul>
+
+                <div className="singOff" onClick={() => {
+                    Signoff()
+                    if (login === "false"){
+                        <Navigate to= "/login" />
+                    }
+                }}> <p>Sign off</p> </div>
+
             </div>
             <div className='containerView'>
-                {cards ? <Cards/> : <NoCards/> } 
+                {cards ? <Cards/> : null /* <NoCards/> */  } 
                 
-              {/*   {activeEmail ? <EmailUser email={email}/>: null }  */}
+                {activeEmail ? <EmailUser email={email} password={password}/>: null }  
             </div>
         </div>
         : <Navigate to= "/login"/>
