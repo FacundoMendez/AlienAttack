@@ -1,4 +1,4 @@
-import React,{useEffect, useContext} from 'react';
+import React,{useEffect, useState,useContext} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import imgCoin from "../../img/token.png"
@@ -14,8 +14,12 @@ function Nav() {
     const contextToken = useContext(TokenContext)
 
     useEffect(() => {
-        navScroll();
-    },[])
+
+        if (contextToken.titleHome){
+            navScroll();
+        }
+        
+    },[1])
 
     let confirmacion = sessionStorage.getItem("popupNavAlert")
 

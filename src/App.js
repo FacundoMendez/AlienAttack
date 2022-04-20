@@ -12,11 +12,11 @@ function App() {
 
   const [token, setToken] = useState(1000)
   const [confirmationBuy, setConfirmationBuy] = useState(false)
-
+  const [titleHome, setTitleHome] = useState(true)
 
   return (
     <BrowserRouter  forceRefresh={true}>
-        <TokenContext.Provider value={{token, setToken, confirmationBuy, setConfirmationBuy}} >
+        <TokenContext.Provider value={{token, setToken, confirmationBuy, setConfirmationBuy, titleHome, setTitleHome}} >
           <Nav />
 
           <Routes >

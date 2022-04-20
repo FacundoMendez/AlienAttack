@@ -5,15 +5,16 @@ import NoCards from './NoCards'
 import { Navigate} from 'react-router-dom'
 import { db } from '../firebase/config'
 import { collection, getDocs} from 'firebase/firestore'
+import EmailUser from './Email'
+
 
 
 const User = () => {
-    let confirmacionVenta = sessionStorage.getItem("confirmacion de venta")
     sessionStorage.removeItem("popupNavAlert")
+    let confirmacionVenta = sessionStorage.getItem("confirmacion de venta")
 
 
     let login = sessionStorage.getItem("login")
-    let idSession = sessionStorage.getItem("id")
 
 
     const[cards, setCards]= useState(false)
@@ -34,9 +35,12 @@ const User = () => {
     
     useEffect(()=>{
         let confirmacionVenta = sessionStorage.getItem("confirmacion de venta")
+        let idSession = sessionStorage.getItem("id")
+
         if(confirmacionVenta === "true"){
             setCards(true)
         }
+
     
         const usersRef = collection(db, "Users");
 
@@ -46,14 +50,17 @@ const User = () => {
         getDocs(usersRef)
           .then(resp => {
             const items = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
-            let userId = items.filter(u => u.id == idSession )
+            let userId = items.filter(u => u.id === idSession )
             setId(userId)
             setPassword(userId[0].usuarioRegistrado.password)
             setEmail(userId[0].usuarioRegistrado.email)
-          })
+          }).catch(()=>{console.log("Login")})
 
 
-
+          return () => {
+            setCards({});
+ /*            sessionStorage.clear() */
+          };
 
 
     },[])
@@ -68,14 +75,18 @@ const User = () => {
 
                         if(confirmacionVenta === "true"){
                             setCards(true)
-                        }else{
-                            setCards(false)
+                            setActiveEmail(false)
                         }
+
                     }} >
                         CHARACTERS
                     </li>
 
-                    <li onClick={() => setActiveEmail(true)}>EMAIL</li>
+                    <li onClick={() => {
+                        setActiveEmail(true)
+                        setCards(false)
+
+                        }}>EMAIL</li>
 
                     <li onClick={() => setActivePassword(true)}>PASSWORD</li>
 
@@ -91,8 +102,9 @@ const User = () => {
                 </ul>
             </div>
             <div className='containerView'>
-                {cards ? <Cards/> : <NoCards /> } 
-
+                {cards ? <Cards/> : <NoCards/> } 
+                
+              {/*   {activeEmail ? <EmailUser email={email}/>: null }  */}
             </div>
         </div>
         : <Navigate to= "/login"/>
