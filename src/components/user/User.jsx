@@ -5,10 +5,11 @@ import NoCards from './NoCards'
 import { Navigate} from 'react-router-dom'
 import { db } from '../firebase/config'
 import { collection, getDocs} from 'firebase/firestore'
-import EmailUser from './Email'
+import EmailUser from './Bill'
 
 
 const User = () => {
+
     sessionStorage.removeItem("popupNavAlert")
     let confirmacionVenta = sessionStorage.getItem("confirmacion de venta")
 
@@ -22,7 +23,6 @@ const User = () => {
     const[id, setId]= useState(" ")
 
 
-    const[activePassword, setActivePassword]= useState(false)
     const[activeEmail, setActiveEmail]= useState(false)
     const[activeHistory, setActiveHistory]= useState(false)
 
@@ -56,6 +56,9 @@ const User = () => {
           }).catch(()=>{console.log("Login")})
 
 
+
+    
+
           return () => {
             setCards({});
  /*            sessionStorage.clear() */
@@ -74,7 +77,6 @@ const User = () => {
 
                         if(confirmacionVenta === "true"){
                             setCards(true)
-                            setActiveEmail(false)
                         }
 
                     }} >
@@ -83,7 +85,6 @@ const User = () => {
 
                     <li onClick={() => {
                         setActiveEmail(true)
-                        setActivePassword(true)
                         setCards(false)
 
                         }}>Bill</li>

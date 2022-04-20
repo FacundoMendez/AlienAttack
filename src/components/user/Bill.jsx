@@ -8,12 +8,10 @@ const EmailUser = ({email, password}) => {
   const [active, setActive] = useState(false)
 
   useEffect(()=>{
-    setTimeout(() => {
-      setActive(true)
-  }, 3000);
+      setTimeout(() => {
+        setActive(true)
+    }, 3000);
   },[])
-
-
 
 
   return (

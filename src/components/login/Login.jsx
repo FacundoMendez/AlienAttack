@@ -42,8 +42,8 @@ const login =  sessionStorage.getItem("id")
 
 
   const SignIn = () =>{
-    return <Navigate to= "/user"/>
-}
+    return <Navigate to= "/user" />
+  }
 
   if (active){
     sessionStorage.setItem("login", true)

@@ -43,6 +43,12 @@
     padding: .5rem;
 }
 
+.singOff:hover{
+    color:#00ffd5;
+    background-color: #00000091;
+    transition: all .1s ease-in-out;
+    box-shadow: 0 0 5px #03e8f4a2, 0 0 10px #03f4d48c, 0 0 20px #03f4e88a, 0 0 80px #03f4e041;
+}
 
 
 .listUser{
@@ -57,7 +63,7 @@
     justify-content: center;
     flex-direction: column;
     justify-content: center;
-    row-gap: 6rem;
+    row-gap: 4rem;
     z-index: 100;
 }
 
