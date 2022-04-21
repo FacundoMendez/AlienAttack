@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import "./cards.css"
-import Loader from '../loader/Loader'
+import Loader from '../../loader/Loader'
 
 
 const EmailUser = ({email, password}) => {
@@ -19,10 +19,10 @@ const EmailUser = ({email, password}) => {
     {active ?
     <div className="bill">
       <div className="emailUser">
-          <p>Email: {email}</p>
+          <p> <span>Email:</span>  {email}</p>
       </div>
       <div className="passwordUser">
-          <p>Password: {password}</p>
+          <p><span> Password: </span> {password}</p>
       </div>
     </div>
 

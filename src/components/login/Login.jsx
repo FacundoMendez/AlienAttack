@@ -1,20 +1,30 @@
-import React,{ useState } from 'react'
+import React,{useContext, useState, useEffect } from 'react'
 import "./login.css"
 import { db } from '../firebase/config'
 import { collection, addDoc, Timestamp } from 'firebase/firestore'
 import { Navigate} from 'react-router-dom'
+import TokenContext from '../context/TokenContext'
 
 const Login = () => {
 
-const [active, setActive] = useState(false)
-const login =  sessionStorage.getItem("id")
 
+const [active, setActive] = useState(false)
 
 
   const [values, setValues] = useState({
     email:" ",
     password:" ",
     fyh: Timestamp.fromDate(new Date()),
+  })
+
+
+  const contextToken = useContext(TokenContext)
+  
+  
+  useEffect(()=> {
+    contextToken.setEmailx(values.email)
+    contextToken.setPasswordx(values.password)
+    contextToken.setFyh(values.fyh.toDate().toString())
   })
 
 
@@ -28,18 +38,18 @@ const login =  sessionStorage.getItem("id")
     const usersRegister = collection(db,"Users")
     addDoc(usersRegister, user )
       .then((doc) => {
-        sessionStorage.setItem("id", doc.id)
+        contextToken.setIdUser(doc.id)
       })
       setActive(true)
-    }
+  }
 
+  
   const handleInputs = (e) =>{
     setValues({
       ...values,
       [e.target.name]: e.target.value
     })
   }
-
 
   const SignIn = () =>{
     return <Navigate to= "/user" />
@@ -49,6 +59,7 @@ const login =  sessionStorage.getItem("id")
     sessionStorage.setItem("login", true)
     return SignIn()
   }
+
 
 
   

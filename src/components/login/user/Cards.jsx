@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import "./cards.css"
-import Loader from '../loader/Loader'
+import Loader from '../../loader/Loader'
 
 const Cards = () => {
   let img = sessionStorage.getItem("Imagen del producto")
@@ -20,11 +20,11 @@ const Cards = () => {
   return (
     <>
     {active ?
-    <div className="card">
-        <div className="cardImg ">
-            <img className={classImg} src={img} alt="Character" />
-        </div>
-    </div>
+      <div className="card">
+          <div className="cardImg ">
+              <img className={classImg} src={img} alt="Character" />
+          </div>
+      </div>
     : <Loader />}
 
     </>
