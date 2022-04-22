@@ -11,6 +11,9 @@ const Popup = (props) => {
 
   const [activeLogin, setActiveLogin] = useState(false)
 
+  const [buyId , setBuyId] = useState(false)
+
+
   return (
     <div className="containerPopup">
         <div className='popupBuy'>
@@ -29,20 +32,23 @@ const Popup = (props) => {
             <div className='yes' onClick={() => {
 
               const characterObj = props.characters.filter( e => e.id === props.id);
-              
                 if (login === null){
                   setActiveLogin(true)
                 }else{ 
                   if(contextToken.token - characterObj[0].precio >= 0){
+                    
+                    setBuyId(true)
 
                     contextToken.setToken(contextToken.token - characterObj[0].precio)
                     props.setPopupVenta(false)
-    
-                    sessionStorage.setItem("Imagen del producto", props.img)
-                    sessionStorage.setItem("clase de imagen", props.class)
-                    sessionStorage.setItem("confirmacion de venta",true)
+
+                    contextToken.setIdUser(props.id)
+                    localStorage.setItem("idProd", props.id)
+                    localStorage.setItem("Imagen del producto", props.img)
+                    localStorage.setItem("clase de imagen", props.class)
+                    localStorage.setItem("confirmacion de venta",true)
                     sessionStorage.setItem("popupNavAlert", true)
-    
+                    
                   }else{
                     noCash()
                   }

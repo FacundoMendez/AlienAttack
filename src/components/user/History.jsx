@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import Loader from '../../loader/Loader'
+import Loader from '../loader/Loader'
 
 
 const History = ({history,fyh}) => {

@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter, Route, Routes ,Navigate} from "react-router-dom";
 import Home from './components/home/Home';
 import Nav from "./components/nav/Nav";
-import User from './components/login/user/User';
+import User from './components/user/User';
 import Login from "./components/login/Login"
 import TokenContext from './components/context/TokenContext.js'; 
 
@@ -35,9 +35,9 @@ function App() {
           <Nav />
 
           <Routes >
+            <Route path='/' element={<Home />}/>
             <Route path='/user'  element={<User /> } />
             <Route path='/login' element={<Login />}/>
-            <Route path='/' element={<Home />}/>
             <Route path='*' element={<Navigate to="/" />}/>
           </Routes>
 

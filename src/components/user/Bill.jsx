@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import "./cards.css"
-import Loader from '../../loader/Loader'
+import Loader from '../loader/Loader'
 
 
 const EmailUser = ({email, password}) => {

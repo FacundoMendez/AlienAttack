@@ -1,17 +1,14 @@
-import React,{useState, useEffect, useContext} from 'react'
+import React,{useState, useEffect} from 'react'
 import "./User.css"
 import Cards from './Cards'
 import NoCards from './NoCards'
 import { Navigate} from 'react-router-dom'
 import EmailUser from './Bill'
-import TokenContext from '../../context/TokenContext'
 import History from './History'
 
 
 const User = () => {
 
-    sessionStorage.removeItem("popupNavAlert")
-    let confirmacionVenta = sessionStorage.getItem("confirmacion de venta")
 
     let login = sessionStorage.getItem("login")
 
@@ -21,13 +18,20 @@ const User = () => {
     const[activeEmail, setActiveEmail]= useState(false)
     const[activeHistory, setActiveHistory]= useState(false)
 
+
+
     const Signoff = () =>{
         sessionStorage.setItem("login", false)
         sessionStorage.clear()
         window.location.reload()
     }
 
-    const contentToken= useContext(TokenContext)
+    sessionStorage.removeItem("popupNavAlert")
+    let emailUser =sessionStorage.getItem("emailUser")
+    let idUser =localStorage.getItem("idProd")
+    let passUser =sessionStorage.getItem("passUser")
+    let fyhUser = localStorage.getItem("fyhUser")
+    let confirmacionVenta = localStorage.getItem("confirmacion de venta")
 
     useEffect(()=>{
 
@@ -38,10 +42,9 @@ const User = () => {
             setCards(true)
         }
     
-
-          return () => {
-            setCards({});
-          };
+        return () => {
+          setCards({});
+        };
 
 
     },[])
@@ -90,8 +93,8 @@ const User = () => {
             </div>
             <div className='containerView'>
                 {cards ? <Cards/> : null /* <NoCards/> */  } 
-                {activeEmail ? <EmailUser email={contentToken.emailx} password={contentToken.passwordx}/>: null }  
-                {activeHistory ? <History history={contentToken.idUser} fyh={contentToken.fyh}/> :null}  
+                {activeEmail ? <EmailUser email={emailUser} password={passUser}/>: null }  
+                {activeHistory ? <History history={idUser} fyh={fyhUser}/> :null}  
             </div>
         </div>
         : <Navigate to= "/login"/>

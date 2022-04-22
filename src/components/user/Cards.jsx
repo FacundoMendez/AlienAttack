@@ -1,10 +1,10 @@
 import React,{useState, useEffect} from 'react'
 import "./cards.css"
-import Loader from '../../loader/Loader'
+import Loader from '../loader/Loader'
 
 const Cards = () => {
-  let img = sessionStorage.getItem("Imagen del producto")
-  let classImg = sessionStorage.getItem("clase de imagen")
+  let img = localStorage.getItem("Imagen del producto")
+  let classImg = localStorage.getItem("clase de imagen")
 
   const [active, setActive] = useState(false)
 
@@ -12,6 +12,10 @@ const Cards = () => {
     setTimeout(() => {
       setActive(true)
   }, 4500);
+
+  return () => {
+    setActive({});
+  };
   },[])
 
 

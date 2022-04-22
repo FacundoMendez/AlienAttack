@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import { FaAngleLeft, FaAngleRight  } from "react-icons/fa";
 import PopupBuy from '../../Buttons/PopupBuy'
 import SliderFuncional from './SliderFuncional'
@@ -7,6 +7,7 @@ import ButtonBuy from '../../Buttons/buttonBuy/ButtonBuy';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase/config';  
 import Loader from '../../loader/Loader';
+import TokenContext from '../../context/TokenContext';
 
 const SliderCharacter = () => {
 
@@ -14,8 +15,10 @@ const SliderCharacter = () => {
   const[loading, setLoading] = useState(false)
   const[characterId, setCharacterId]= useState(1)
 
+  const context = useContext(TokenContext)
+  const[id, setId]= useState(1)
+
   useEffect(() =>{
-        /* */
 
     /* armar la referencia de la base de datos */
     
@@ -24,27 +27,29 @@ const SliderCharacter = () => {
     /* llamar (async) esa referencia */
 
     getDocs(charactersRef)
-      .then(resp => {
+      .then((resp) => {
         const items = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+        console.log(items)      
         setCharacters(items)
-
       }).finally(() => {
         setLoading(true)
         SliderFuncional({setCharacterId})
 
       })
-      
+
+
+
   },[])  
 
 
 
   /* state */
     const[popupVenta, setPopupVenta]= useState(false) /* activa el boton de comprar */
-    const[id, setId]= useState(1)
     /* valores para las stats */
 
     const[activePopupStats, setActivePopupStats] = useState(false)
 
+  
 
   return (
     <>
@@ -173,6 +178,7 @@ const SliderCharacter = () => {
                 img={characters[characterId -1].img}
               /> : null}
           </div>
+      
         </div>
     : <Loader />
     } 

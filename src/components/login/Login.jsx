@@ -17,14 +17,17 @@ const [active, setActive] = useState(false)
     fyh: Timestamp.fromDate(new Date()),
   })
 
-
   const contextToken = useContext(TokenContext)
-  
-  
-  useEffect(()=> {
+
+
+  useEffect(()=>{
     contextToken.setEmailx(values.email)
     contextToken.setPasswordx(values.password)
     contextToken.setFyh(values.fyh.toDate().toString())
+
+    sessionStorage.setItem("emailUser",contextToken.emailx)
+    sessionStorage.setItem("passUser",contextToken.passwordx)
+    localStorage.setItem("fyhUser",contextToken.fyh)
   })
 
 
@@ -36,10 +39,7 @@ const [active, setActive] = useState(false)
     }
 
     const usersRegister = collection(db,"Users")
-    addDoc(usersRegister, user )
-      .then((doc) => {
-        contextToken.setIdUser(doc.id)
-      })
+      addDoc(usersRegister, user )
       setActive(true)
   }
 
@@ -52,8 +52,12 @@ const [active, setActive] = useState(false)
   }
 
   const SignIn = () =>{
+    localStorage.setItem("fyhUser",contextToken.fyh)
+
     return <Navigate to= "/user" />
   }
+
+
 
   if (active){
     sessionStorage.setItem("login", true)
