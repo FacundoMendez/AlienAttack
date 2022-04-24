@@ -84,7 +84,7 @@ main {
 /* CONTAINER 1  */
 
 
-.container1{
+.containerVideoAlien{
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -92,7 +92,7 @@ main {
   z-index: 100;
 }
 
-.container1 video{
+.containerVideoAlien video{
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -103,13 +103,14 @@ main {
   filter:  contrast(120%) brightness(90%) hue-rotate(40deg);
 }
 
-.container1::after{
+.containerVideoAlien::after{
   content: "";
   position: absolute;
-  bottom: -3.8vw;
+  bottom: -6vw;
   background-color: #000000;
+  background: #000000;
   height: 15vh;
-  filter: blur(4rem);
+  filter: blur(2rem);
   width: 100vw;
   z-index: 100;
 
@@ -117,7 +118,7 @@ main {
 
 /* container 1 title */
 
-.container1Title{
+.containerTitle{
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -183,7 +184,6 @@ main {
   }
 }
 
-
 .buttonPlay{
   position: relative;
   font-size: 3.6rem;
@@ -244,7 +244,7 @@ main {
   opacity: 0;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   transition: all .05s ease-in-out;
   z-index: 2;
   transform: scale(1);

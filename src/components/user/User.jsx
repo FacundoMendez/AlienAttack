@@ -13,7 +13,7 @@ const User = () => {
     let login = sessionStorage.getItem("login")
 
     const[cards, setCards]= useState(false)
-
+    const[noCards, setNoCards]= useState(false)
 
     const[activeEmail, setActiveEmail]= useState(false)
     const[activeHistory, setActiveHistory]= useState(false)
@@ -55,10 +55,19 @@ const User = () => {
         <div className='tableUser'>
             <div className='containerList'>
                 <ul className='listUser'>
+
+          
+
                     <li className='characters' onClick={() => {
 
                         if(confirmacionVenta === "true"){
                             setCards(true)
+                            setActiveHistory(false)
+                            setActiveEmail(false)
+                            setNoCards(false)
+                        }else if(confirmacionVenta === null){
+                            setCards(false)
+                            setNoCards(true)
                             setActiveHistory(false)
                             setActiveEmail(false)
                         }
@@ -70,6 +79,7 @@ const User = () => {
                     <li onClick={() => {
                         setActiveEmail(true)
                         setCards(false)
+                        setNoCards(false)
                         setActiveHistory(false)
                         }}>Bill
                     </li>
@@ -77,6 +87,7 @@ const User = () => {
                     <li onClick={() => {
                         setActiveHistory(true)
                         setCards(false)
+                        setNoCards(false)
                         setActiveEmail(false)
                         }}>HISTORY
                     </li>
@@ -92,8 +103,9 @@ const User = () => {
 
             </div>
             <div className='containerView'>
-                {cards ? <Cards/> : null /* <NoCards/> */  } 
                 {activeEmail ? <EmailUser email={emailUser} password={passUser}/>: null }  
+                {cards ? <Cards/> : null  } 
+                {noCards ? <NoCards/> : null  } 
                 {activeHistory ? <History history={idUser} fyh={fyhUser}/> :null}  
             </div>
         </div>

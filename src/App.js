@@ -6,6 +6,8 @@ import Nav from "./components/nav/Nav";
 import User from './components/user/User';
 import Login from "./components/login/Login"
 import TokenContext from './components/context/TokenContext.js'; 
+import CursorCustom from './components/cursor/CursorCustom';
+import Footer from './components/footer/Footer';
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
 
   return (
     <BrowserRouter  forceRefresh={true}>
+
         <TokenContext.Provider value={{
           token, setToken, 
           confirmationBuy, setConfirmationBuy, 
@@ -32,6 +35,7 @@ function App() {
           fyh, setFyh
           }} >
 
+          <CursorCustom/>
           <Nav />
 
           <Routes >
@@ -43,7 +47,10 @@ function App() {
 
         </TokenContext.Provider>
     </BrowserRouter>
+    
   )
+  
+
 }
 
 export default App;

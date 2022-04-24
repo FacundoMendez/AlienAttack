@@ -4,7 +4,8 @@ import { Title } from '../container/Title';
 import Container2Scene from '../container2/Scene';
 import EffectMovie from '../container/EffectMovie';
 import Preload from '../preload/Preload';
-
+import PresentGame from '../container1/PresentGame';
+import Footer from '../footer/Footer';
 
 function Home() {
 
@@ -17,7 +18,7 @@ function Home() {
           <Preload />
           <main className='main'>
 
-              <div className='container1Title'>
+              <div className='containerTitle'>
                   <hr className='lineHorizontal'></hr>
                   <hr className='lineVertical'></hr>
                   <Title text="Play"/>
@@ -25,10 +26,14 @@ function Home() {
 
               <canvas id="container" className='container'> </canvas>
 
-              <div className='container1'>
+              <div className='containerVideoAlien'>
                   <video src={VideoBackground} autoPlay loop muted ></video>
               </div>
+
+              <PresentGame/>
               <Container2Scene/>
+              <Footer/>
+
           </main>
       </div>
   );

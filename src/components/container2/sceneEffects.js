@@ -35,13 +35,22 @@ const sceneEffects = () =>{
     })
 
     .to(sliderCharacter,{
-        opacity: 1
+        opacity: 1,
+        duration:3,
     })
 
-/*      .to(container2,{
+    .to(container2,{
+        webkitFilter:"blur(5px)",
+        duration:5,
+        delay:10,
         opacity:0,
-        duration:10,
-    }) */
+    }) 
+
+    .to(container2,{
+        opacity:-1,
+        duration:5,
+        delay:1,
+    }) 
 
 }
 

@@ -14,6 +14,7 @@ const Container2Scene = () => {
 
     return (
         <div className='container2'>
+
             <div className='container2-pasillo'>
                 <img src={backgroundPasillo} alt="Pasillo" ></img>
             </div>

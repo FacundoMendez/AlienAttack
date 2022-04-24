@@ -45,7 +45,7 @@ const PopupStats = ({ setActive, valorHp, setActivePopupStats}) => {
 
             <div
               className="yes" onClick={() => {
-                let confirmBuyCharacter = sessionStorage.getItem("confirmacion de venta");
+                let confirmBuyCharacter = localStorage.getItem("confirmacion de venta");
                 setActivePopupStats(false)
 
                 if (confirmBuyCharacter === "true") {

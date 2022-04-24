@@ -128,12 +128,9 @@ const SliderCharacter = () => {
               valorFuerza={characters[characterId -1].fuerza}
               
 
-              titleFuerza="FUERZA"
+              titleFuerza="Damage"
 
-              textFuerza="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                      Iste hic libero minus explicabo est nemo, soluta id culpa 
-                      consectetur doloribus eius aliquam quisquam rerum quasi cum 
-                      voluptas ipsam placeat veniam"
+              textFuerza="The damage depends on the difference between additional AD and additional AP: for units with more additional AD it is granted physical damage, for units with more additional AP it is granted magic damage."
 
 
               /* velocidad */
@@ -141,12 +138,9 @@ const SliderCharacter = () => {
               valorVelocidad={characters[characterId -1].velocidad}
 
 
-              titleVelocidad="VELOCIDAD"
+              titleVelocidad="Speed"
 
-              textVelociad="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Iste hic libero minus explicabo est nemo, soluta id culpa 
-                    consectetur doloribus eius aliquam quisquam rerum quasi cum 
-                    voluptas ipsam placeat veniam"
+              textVelociad="Movement Speed ​​is a champion stat that represents the speed at which a champion travels across a map."
 
 
 
@@ -155,12 +149,10 @@ const SliderCharacter = () => {
               valorHp={characters[characterId -1].vida}
 
 
-              textHp="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Iste hic libero minus explicabo est nemo, soluta id culpa 
-                    consectetur doloribus eius aliquam quisquam rerum quasi cum 
-                    voluptas ipsam placeat veniam"
+              textHp="
+              Amount of health a champion has plus 1% per defense unit as bonus health due to damage reduction. In other words, health is the amount of damage an enemy needs to deal to kill the champion."
 
-              titleHp="VIDA"
+              titleHp="Health"
             />
             
             
