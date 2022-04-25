@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useContext} from 'react'
+import React, {useEffect, useState} from 'react'
 import { FaAngleLeft, FaAngleRight  } from "react-icons/fa";
 import PopupBuy from '../../Buttons/PopupBuy'
 import SliderFuncional from './SliderFuncional'
@@ -7,7 +7,6 @@ import ButtonBuy from '../../Buttons/buttonBuy/ButtonBuy';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase/config';  
 import Loader from '../../loader/Loader';
-import TokenContext from '../../context/TokenContext';
 
 const SliderCharacter = () => {
 
@@ -15,7 +14,6 @@ const SliderCharacter = () => {
   const[loading, setLoading] = useState(false)
   const[characterId, setCharacterId]= useState(1)
 
-  const context = useContext(TokenContext)
   const[id, setId]= useState(1)
 
   useEffect(() =>{
