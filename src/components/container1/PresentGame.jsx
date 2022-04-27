@@ -18,6 +18,7 @@ const PresentGame = () => {
 
             <div className="blurVideoRight"></div>
             <div className="blurVideo"></div>
+            <div className="blurVideoBottomx2"></div>
 
 
         </div>
