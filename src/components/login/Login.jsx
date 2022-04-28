@@ -4,6 +4,8 @@ import { db } from '../firebase/config'
 import { collection, addDoc, Timestamp } from 'firebase/firestore'
 import { Navigate} from 'react-router-dom'
 import TokenContext from '../context/TokenContext'
+import Footer from '../footer/Footer'
+
 
 const Login = () => {
 
@@ -117,7 +119,7 @@ const [active, setActive] = useState(false)
             </div>
           </section>
         </form>
-
+        
       </div>
   )
 }

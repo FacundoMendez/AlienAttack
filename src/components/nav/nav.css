@@ -12,9 +12,11 @@
     text-align: center;
     left: 85%;
     transform: translate(-50%);
-    top: 2rem;
+    top: 1.5rem;
     color:#00ffdd;
     font-size: 3rem;
+    width: 30%;
+    padding: 0 2rem;
     z-index: 10001;
     display: none;
     transition: all 1s ease-in-out;
