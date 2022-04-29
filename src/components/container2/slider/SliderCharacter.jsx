@@ -146,7 +146,6 @@ const SliderCharacter = () => {
 
               valorHp={characters[characterId -1].vida}
 
-
               textHp="
               Amount of health a champion has plus 1% per defense unit as bonus health due to damage reduction. In other words, health is the amount of damage an enemy needs to deal to kill the champion."
 
@@ -158,6 +157,8 @@ const SliderCharacter = () => {
               id={characters[characterId -1].id}
               characters={characters}
               setPopupVenta={setPopupVenta}
+              idP={id} /* --- */
+
             /> : null}
 
             { popupVenta ? <PopupBuy

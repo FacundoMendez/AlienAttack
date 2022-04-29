@@ -15,11 +15,11 @@ const Footer = () => {
             </p><br />
             <div className='listTerms'>
                 <ul>
-                    <li><a href=""> • Privacy Policy</a></li>
-                    <li><a href=""> • Terms and Conditions </a></li>
-                    <li><a href=""> • Cookie Policy </a></li>
-                    <li><a href=""> • Legal Notices </a></li>
-                    <li><a href=""> • EULA </a></li>
+                    <li><a href="/home"> • Privacy Policy</a></li>
+                    <li><a href="/home"> • Terms and Conditions </a></li>
+                    <li><a href="/home"> • Cookie Policy </a></li>
+                    <li><a href="/home"> • Legal Notices </a></li>
+                    <li><a href="/home"> • EULA </a></li>
                 </ul>
             </div>
         </div>

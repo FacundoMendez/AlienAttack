@@ -1,10 +1,11 @@
-import React,{useState, useEffect} from 'react'
-import "./User.css"
-import Cards from './Cards'
-import NoCards from './NoCards'
-import { Navigate} from 'react-router-dom'
-import EmailUser from './Bill'
-import History from './History'
+import React,{useState, useEffect} from 'react';
+import "./User.css";
+import Cards from './Cards';
+import NoCards from './NoCards';
+import { Navigate} from 'react-router-dom';
+import EmailUser from './Bill';
+import History from './History';
+import Footer from '../footer/Footer';
 
 
 const User = () => {
@@ -55,8 +56,6 @@ const User = () => {
         <div className='tableUser'>
             <div className='containerList'>
                 <ul className='listUser'>
-
-          
 
                     <li className='characters' onClick={() => {
 
@@ -111,6 +110,8 @@ const User = () => {
         </div>
         : <Navigate to= "/login"/>
          }
+        
+        <Footer/>
     </>
   )
 }

@@ -7,7 +7,6 @@ import User from './components/user/User';
 import Login from "./components/login/Login"
 import TokenContext from './components/context/TokenContext.js'; 
 import CursorCustom from './components/cursor/CursorCustom';
-import Footer from './components/footer/Footer';
 
 
 function App() {

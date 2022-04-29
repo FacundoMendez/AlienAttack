@@ -59,6 +59,7 @@ const Popup = (props) => {
                 
                 <ButtonBuyDiseño  
                   nameClass="configButton" 
+                  buyId={buyId} /* --- */
                   text={"YES"} 
                 />
             </div>

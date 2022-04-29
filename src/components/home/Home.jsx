@@ -4,7 +4,7 @@ import { Title } from '../container/Title';
 import Container2Scene from '../container2/Scene';
 import EffectMovie from '../container/EffectMovie';
 import Preload from '../preload/Preload';
-import PresentGame from '../container1/PresentGame';
+import PresentGame from '../container1/PresentGame.jsx';
 import Footer from '../footer/Footer';
 
 function Home() {

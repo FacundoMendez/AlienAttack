@@ -38,24 +38,17 @@ function Nav() {
                         </li>
 
                         <li className="nav-menu-item">
-                            <a href="#slider" className="nav-menu-link nav-link">
-                                Store
+                            <a href="/login" className="nav-menu-link nav-link">
+                                Login
                             </a>
                         </li>
-
                         
-                            <li className="nav-menu-item">
-                                <a href="/login" className="nav-menu-link nav-link">
-                                    Login
-                                </a>
-                            </li>
-
-                            <li className="nav-menu-item user">
-                                <a href="/user" className="nav-menu-link nav-link">
-                                    User
-                                </a>
-                                {confirmacion ? <PopupAlertNav/> : null}
-                            </li>
+                        <li className="nav-menu-item user">
+                            <a href="/user" className="nav-menu-link nav-link">
+                                User
+                            </a>
+                            {confirmacion ? <PopupAlertNav/> : null}
+                        </li>
 
                         <li className="nav-menu-item nav2" >
                             <div className='containerCoin'>

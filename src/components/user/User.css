@@ -21,9 +21,11 @@
     height: 90vh;
     top: 50%;
     transform: translate(0, -50%);
-    border: .5px solid rgb(165, 250, 243);
+    border: 3px groove rgb(165, 250, 243);
+    box-shadow: 0 0 1.1rem #2effdc ;
     position: relative;
     z-index: 10;
+
 }
 
 .singOff{
@@ -88,7 +90,8 @@
     width: 81.8vw;
     height: 90vh;
     top: 5%;
-    border: .5px solid rgb(165, 250, 243);
+    border: 3px groove rgb(165, 250, 243);
+    box-shadow: 0 0 1.1rem #2effdc ;
     position: relative;
     z-index: 1;
     display: flex;
