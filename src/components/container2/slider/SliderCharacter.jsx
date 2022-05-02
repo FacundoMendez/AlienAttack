@@ -43,7 +43,6 @@ const SliderCharacter = () => {
 
   /* state */
     const[popupVenta, setPopupVenta]= useState(false) /* activa el boton de comprar */
-    /* valores para las stats */
 
     const[activePopupStats, setActivePopupStats] = useState(false)
 
