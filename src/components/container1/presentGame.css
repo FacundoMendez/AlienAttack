@@ -10,7 +10,7 @@
 }
 
 .container1 video{
-    width: 95vw;
+    width: 90vw;
     cursor: pointer;
     filter: contrast(150%) brightness(100%) hue-rotate(59deg);
     object-fit: cover;
@@ -18,18 +18,18 @@
 
 .textPresent{
     margin-top: 20rem;
-    width: 80%;
+    width: 70%;
     position: relative;
     text-align: center;
 }
 
 .textPresent p{
-    font-size: 3.5rem;
-    letter-spacing: -5px;
+    font-size: 3.2rem;
+    letter-spacing: -6px;
     color: white;
     font-weight: bold;
     text-align: center;
-    line-height: 6rem;
+    line-height: 5rem;
 }
 
 

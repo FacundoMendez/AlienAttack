@@ -23,8 +23,10 @@ const PresentGame = () => {
             
 
             <div className="textPresent">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima nemo beatae, explicabo, ipsum ipsam incidunt hic dolores quaerat dolorem voluptas sunt necessitatibus iste enim possimus, amet sequi nisi cupiditate ut.
-                Quod, nam. Repudiandae maxime quod repellendus necessitatibus nisi quos? Ipsam quos adipisci sequi officiis aliquid quo assumenda beatae amet voluptatibus atque. Recusandae dignissimos ex laboriosam officia molestias libero ad exercitationem.
+                <p>
+                Welcome to the world of AlienAttack, a multiplayer strategy game where you have to acquire only one character and fight against other people.
+                Inside the map you can find hidden tokens, you will be able to earn tokens by eliminating your opponents and level up your character.
+                With the tokens you can buy Stats and thus increase the potential of your champion! Compete against your friends in custom tournaments and earn customization emblems!
                 </p>
             </div>
         </div>

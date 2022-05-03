@@ -7,6 +7,8 @@ const sceneEffects = () =>{
     const container2Pasillo = document.querySelector(".container2-pasillo")
     const container2Character = document.querySelector(".container2-character")
     const sliderCharacter = document.querySelector(".container2-slider")
+    
+    
     gsap.timeline({
         scrollTrigger:{
             trigger: container2,
