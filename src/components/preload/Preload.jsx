@@ -12,7 +12,7 @@ const Preload = () => {
         gsap.to(".tv",{
             delay:.5,
             duration:1,
-            opacity:"+=1",
+            opacity:1,
             scaleX:"+= 100"
         })
        
@@ -20,7 +20,7 @@ const Preload = () => {
         gsap.to(".tv",{
             delay:2,
             duration:2,
-            scaleY:"+= 2000",
+            scaleY:"+= 1500",
             opacity:.2
         })
 
