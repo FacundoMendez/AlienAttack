@@ -199,3 +199,13 @@
     padding: 1.5rem;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+
+
+@media screen and (max-width: 1440px) {
+    
+    .tableUser{
+        margin-top: 5rem;
+    }
+
+}

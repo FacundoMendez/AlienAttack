@@ -6,6 +6,8 @@ import EffectMovie from '../container/EffectMovie';
 import Preload from '../preload/Preload';
 import PresentGame from '../container1/PresentGame.jsx';
 import Footer from '../footer/Footer';
+import LetrasRandom from '../container3Random/LetrasRandom';
+
 
 function Home() {
 
@@ -32,6 +34,7 @@ function Home() {
 
               <PresentGame/>
               <Container2Scene/>
+              <LetrasRandom/>
               <Footer/>
 
           </main>

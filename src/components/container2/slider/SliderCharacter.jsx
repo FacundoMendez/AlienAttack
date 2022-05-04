@@ -27,7 +27,6 @@ const SliderCharacter = () => {
     getDocs(charactersRef)
       .then((resp) => {
         const items = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
-        console.log(items)      
         setCharacters(items)
       }).finally(() => {
         setLoading(true)
